@@ -8,6 +8,20 @@ defmodule Koans.MeditateWarning do
 end
 
 defmodule Koans do
+  defmacro __using__([]) do
+    quote do
+      use ExUnit.Case
+      import Koans, only: [think: 2, meditate: 1, __?: 0, assert_?: 1]
+    end
+  end
+
+  defmacro think(message, test) do
+    quote do
+      Module.put_attribute(__MODULE__, :meditation, unquote(message))
+      test(unquote(message), unquote(test))
+    end
+  end
+
   def meditate(subject) do
     raise Koans.MeditateWarning, message: subject
   end
