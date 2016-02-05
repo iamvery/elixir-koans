@@ -1,9 +1,4 @@
-#!/usr/bin/env elixir
-
-ExUnit.start
-
 defmodule About_Enums do
-  use ExUnit.Case
   use Koans
 
   think "Output each element on its own line" do

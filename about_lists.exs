@@ -1,9 +1,4 @@
-#!/usr/bin/env elixir
-
-ExUnit.start
-
 defmodule About_Lists do
-    use ExUnit.Case
     use Koans
 
     think "Create your first list" do

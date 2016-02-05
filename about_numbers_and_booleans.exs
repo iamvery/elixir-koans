@@ -1,9 +1,4 @@
-#!/usr/bin/env elixir
-
-ExUnit.start
-
 defmodule About_Numbers_and_booleans do
-    use ExUnit.Case
     use Koans
 
     think "Basics numbers types" do

@@ -1,9 +1,4 @@
-#!/usr/bin/env elixir
-
-ExUnit.start
-
 defmodule About_Maps do
-  use ExUnit.Case
   use Koans
 
   think "maps are a key-value store" do

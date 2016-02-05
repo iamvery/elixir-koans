@@ -1,9 +1,4 @@
-#!/usr/bin/env elixir
-
-ExUnit.start
-
 defmodule About_Strings do
-  use ExUnit.Case
   use Koans
 
   think "creating a new string is easy" do

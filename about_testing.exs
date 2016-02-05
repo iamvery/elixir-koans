@@ -1,11 +1,5 @@
-#!/usr/bin/env elixir
-
-# This should be replaced with the correct code to start the ExUnit server
-Koans.About_testing.start_exUnit!
-
 defmodule About_testing do
-    use FakeUnit.Case
-    use Koans.About_testing
+    use Koans
 
     think "We shall contemplate truth by testing reality, via asserts." do
         assert __?

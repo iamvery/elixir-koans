@@ -1,9 +1,4 @@
-#!/usr/bin/env elixir
-
-ExUnit.start
-
 defmodule About_Tuples do
-    use ExUnit.Case
     use Koans
 
     think "Getting tuples size is a kernel feature" do

@@ -1,9 +1,4 @@
-#!/usr/bin/env elixir
-
-ExUnit.start
-
 defmodule About_Matches_Variables do
-  use ExUnit.Case
   use Koans
 
   think "It's like affecting a variable" do
