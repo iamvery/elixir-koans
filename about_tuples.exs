@@ -16,7 +16,7 @@ defmodule About_Tuples do
     quote do: :erlang.element(unquote(index), unquote(tuple))
   end
 
-  test "In erlang tuples and lists start at index 1, wich is different in elixir" do
+  think "In erlang tuples and lists start at index 1, wich is different in elixir" do
     a_tuple = {:foo, :bar}
     foo_index = 0
     assert elem(a_tuple, foo_index) == erlang_elem(a_tuple, foo_index + __?)
@@ -58,7 +58,7 @@ defmodule About_Tuples do
     assert tuple_size(quoted_block) == __?
   end
 
-  test "We can use tuples to define blocks" do
+  think "We can use tuples to define blocks" do
     # Note: unquote is the reverse of quote
     # It gives a block from its representation
     unquoted_block = unquote {:"{}", [], [1, 2, 3]}
