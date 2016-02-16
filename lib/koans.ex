@@ -35,19 +35,21 @@ defmodule Koans do
   end
 
   defp exec({module, koan}) do
-    # TODO
+    try do
+      apply(module, koan, [])
+    rescue
+      problem in [ExUnit.AssertionError, Koans.MeditateWarning] ->
+        stop_to_learn(problem, koan, module)
+    end
+    # TODO congratulate success
   end
 
   defmacro think(message, lesson) do
+    name = :"#{message}"
     quote do
       Module.put_attribute(__MODULE__, :meditation, unquote(message))
-      try do
-        unquote(lesson)
-      rescue
-        lesson in [ExUnit.AssertionError, Koans.MeditateWarning] ->
-          stop_to_learn(lesson, @meditation, __MODULE__)
-      end
-      # TODO congratulate success
+      Koans.add({__MODULE__, unquote(name)})
+      def unquote(name)(), do: unquote(lesson)
     end
   end
 
