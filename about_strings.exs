@@ -87,7 +87,7 @@ defmodule About_Strings do
     assert String.rstrip(a_string) == __?
   end
 
-  think "stripping on the right" do
+  think "stripping on the right with specific character" do
     a_string = "  abc  $"
     assert String.rstrip(a_string, ?$) == __?
   end
