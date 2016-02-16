@@ -30,7 +30,15 @@ Enlightenment
 -------------
 
 The koans are run via [Mix], Elixir's task runner.
-Continually run `mix learn` to gain enlightenment.
+
+1. Clone the repository.
+
+       $ git clone https://github.com/iamvery/elixir-koans.git
+       $ cd elixir-koans
+
+2. Run the mix task.
+
+       $ mix learn
 
 Inspiration
 -----------
