@@ -15,8 +15,8 @@ defmodule Mix.Tasks.Learn do
     Code.load_file("about_enums.exs")
     Code.load_file("about_tuples.exs")
     Code.load_file("about_maps.exs")
-    Code.load_file("about_anonymous_function.exs")
-    Code.load_file("about_named_function.exs")
+    Code.load_file("about_anonymous_functions.exs")
+    Code.load_file("about_named_functions.exs")
     Code.load_file("about_match_variables.exs")
   end
 end
