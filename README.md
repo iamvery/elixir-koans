@@ -33,12 +33,16 @@ The koans are run via [Mix], Elixir's task runner.
 
 1. Clone the repository.
 
-       $ git clone https://github.com/iamvery/elixir-koans.git
-       $ cd elixir-koans
+   ```
+   $ git clone https://github.com/iamvery/elixir-koans.git
+   $ cd elixir-koans
+   ```
 
 2. Run the mix task.
 
-       $ mix learn
+   ```
+   $ mix learn
+   ```
 
 Inspiration
 -----------
