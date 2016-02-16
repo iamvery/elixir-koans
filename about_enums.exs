@@ -1,9 +1,9 @@
 defmodule AboutEnums do
   use Koans
 
-  think "Output each element on its own line" do
+  think "Do something with each element" do
     list = [1, 2, 3]
-    Enum.each(list, fn (x) -> __? end)
+    Enum.each(list, fn (x) -> assert_? x end)
   end
 
   think "Mapping over a list" do
