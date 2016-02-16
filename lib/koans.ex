@@ -15,11 +15,11 @@ defmodule Koans do
     end
   end
 
-  defmacro think(message, test) do
+  defmacro think(message, lesson) do
     quote do
       Module.put_attribute(__MODULE__, :meditation, unquote(message))
       try do
-        unquote(test)
+        unquote(lesson)
       rescue
         lesson in [ExUnit.AssertionError, Koans.MeditateWarning] ->
           stop_to_learn(lesson, @meditation, __MODULE__)
