@@ -44,6 +44,8 @@ The koans are run via [Mix], Elixir's task runner.
    $ mix learn
    ```
 
+   Note: Currently the koans generate a lot of warnings. These can probably be ignored (https://github.com/iamvery/elixir-koans/issues/4).
+
 Inspiration
 -----------
 
