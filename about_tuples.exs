@@ -3,12 +3,12 @@ defmodule AboutTuples do
 
   think "Getting tuples size is a kernel feature" do
     a_tuple = {:foo, :bar}
-    assert tuple_size(a_tuple) == __?
+    assert tuple_size(a_tuple) == 2
   end
 
   think "Can reach tuple element with index" do
     a_tuple = {:foo, :bar}
-    assert elem(a_tuple, 0) == __?
+    assert elem(a_tuple, 0) == :foo
   end
 
   defmacrop erlang_elem(tuple, index) do
@@ -19,32 +19,32 @@ defmodule AboutTuples do
   think "In erlang tuples and lists start at index 1, which is different in elixir" do
     a_tuple = {:foo, :bar}
     foo_index = 0
-    assert elem(a_tuple, foo_index) == erlang_elem(a_tuple, foo_index + __?)
+    assert elem(a_tuple, foo_index) == erlang_elem(a_tuple, foo_index + 1)
   end
 
   think "Can set a tuple element" do
     a_tuple = {:foo, :bar}
     baz_tuple = put_elem(a_tuple, 0, :baz)
     # Note: think about immutability
-    assert elem(a_tuple, 0) == __?
-    assert elem(baz_tuple, 0) == __?
+    assert elem(a_tuple, 0) == :foo
+    assert elem(baz_tuple, 0) == :baz
   end
 
   think "Setting a tuple element that not exists raise an argument error" do
     a_tuple = {:foo, :bar}
 
-    assert_raise ArgumentError, fn -> put_elem(a_tuple, __?, :baz) end
+    assert_raise ArgumentError, fn -> put_elem(a_tuple, 2, :baz) end
   end
 
   think "Can insert a tuple element" do
     a_tuple = {:foo, :bar}
     baz_tuple = Tuple.insert_at(a_tuple, 2, :baz)
-    assert elem(baz_tuple, 2) == __?
+    assert elem(baz_tuple, 2) == :baz
   end
 
   think "Inserting a tuple element raise an argument error if index is invalid" do
     a_tuple = {:foo, :bar}
-    assert_raise ArgumentError, fn -> Tuple.insert_at(a_tuple, __?, :baz) end
+    assert_raise ArgumentError, fn -> Tuple.insert_at(a_tuple, 3, :baz) end
   end
 
   think "The building blocks of Elixir are tuples of three elements" do
@@ -54,8 +54,8 @@ defmodule AboutTuples do
       assert a == 3
     end
 
-    assert Koans.Check.tuple?(quoted_block)
-    assert tuple_size(quoted_block) == __?
+    assert is_tuple(quoted_block)
+    assert tuple_size(quoted_block) == 3
   end
 
   think "We can use tuples to define blocks" do
@@ -67,11 +67,11 @@ defmodule AboutTuples do
     # the list [] contains metadatas like the line and module where code is defined
     # the list [1, 2, 3] are arguments passed to the function
     # For more infos see Macros and quote/unquote functions
-    assert unquoted_block == __?
+    assert unquoted_block == {1,2,3}
   end
 
   think "Are tuples enumerables ?" do
-    assert_raise __?, fn -> Enum.empty?({1, 2, 3}) end
+    assert_raise Protocol.UndefinedError, fn -> Enum.empty?({1, 2, 3}) end
     # Note:
     # Do you smell the underlying machinery that make list and tuple types differents ?
   end

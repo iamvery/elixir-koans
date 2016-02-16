@@ -2,19 +2,19 @@ defmodule AboutAsserts do
   use Koans
 
   think "We shall contemplate truth by testing reality, via asserts." do
-    assert __?
+    assert true
   end
 
   think "When reality lies, we shall refute truth" do
-    refute __?
+    refute false
   end
 
   think "Enlightenment may be more easily achieved with appropriate messages." do
-    assert false, "This should be true -- Please fix this"
+    assert true, "This should be true -- Please fix this"
   end
 
   think "To understand reality, we must compare our expectations against reality." do
-    expected_value = __?
+    expected_value = 2
     actual_value = 1 + 1
 
     assert expected_value == actual_value
@@ -24,10 +24,10 @@ defmodule AboutAsserts do
     is_1_equal_2? = fn -> assert 1 == 2 end
     is_1_greater_than_2? = fn -> assert 1 > 2 end
 
-    message = "Assertion with " <> __? <> " failed"
+    message = "Assertion with " <> "==" <> " failed"
     assert_raise ExUnit.AssertionError, message, is_1_equal_2?
 
-    message = "Assertion with " <> __? <> " failed"
+    message = "Assertion with " <> ">" <> " failed"
     assert_raise ExUnit.AssertionError, message, is_1_greater_than_2?
   end
 end
