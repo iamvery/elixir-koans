@@ -7,5 +7,6 @@ defmodule Mix.Tasks.Learn do
 
   def run(_) do
     Koans.start
+    Code.load_file "about_koans.ex"
   end
 end
