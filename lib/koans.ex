@@ -26,12 +26,12 @@ defmodule Koans do
     Agent.update(@name, fn koans -> [koan|koans] end)
   end
 
-  defp get do
+  defp koans do
     Agent.get(@name, fn koans -> koans end)
   end
 
   def run do
-    get |> Enum.reverse |> Enum.each(&exec/1)
+    koans |> Enum.reverse |> Enum.each(&exec/1)
   end
 
   defp exec({module, koan}) do
