@@ -16,7 +16,7 @@ defmodule AboutTuples do
     quote do: :erlang.element(unquote(index), unquote(tuple))
   end
 
-  think "In erlang tuples and lists start at index 1, wich is different in elixir" do
+  think "In erlang tuples and lists start at index 1, which is different in elixir" do
     a_tuple = {:foo, :bar}
     foo_index = 0
     assert elem(a_tuple, foo_index) == erlang_elem(a_tuple, foo_index + __?)
