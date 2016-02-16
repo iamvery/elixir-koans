@@ -6,5 +6,6 @@ defmodule Mix.Tasks.Learn do
   @shortdoc "Learn Elixir through meditation"
 
   def run(_) do
+    Koans.start
   end
 end
