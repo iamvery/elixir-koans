@@ -8,11 +8,34 @@ defmodule Koans.MeditateWarning do
 end
 
 defmodule Koans do
+  @name __MODULE__
+
   defmacro __using__([]) do
     quote do
       import ExUnit.Assertions
       import Koans, only: [think: 2, stop_to_learn: 3, meditate: 1, __?: 0, assert_?: 1]
     end
+  end
+
+  def start do
+    Agent.start_link(fn -> [] end, name: @name)
+    System.at_exit(fn 0 -> run end)
+  end
+
+  def add(koan) do
+    Agent.update(@name, fn koans -> [koan|koans] end)
+  end
+
+  defp get do
+    Agent.get(@name, fn koans -> koans end)
+  end
+
+  def run do
+    get |> Enum.reverse |> Enum.each(&exec/1)
+  end
+
+  defp exec({module, koan}) do
+    # TODO
   end
 
   defmacro think(message, lesson) do
