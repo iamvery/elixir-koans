@@ -7,7 +7,7 @@ defmodule Mix.Tasks.Learn do
 
   def run(_) do
     Koans.start
-    Code.load_file("about_testing.exs")
+    Code.load_file("about_asserts.exs")
     Code.load_file("about_numbers_and_booleans.exs")
     Code.load_file("about_strings.exs")
     Code.load_file("about_lists.exs")

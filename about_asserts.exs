@@ -1,4 +1,4 @@
-defmodule AboutTesting do
+defmodule AboutAsserts do
   use Koans
 
   think "We shall contemplate truth by testing reality, via asserts." do
