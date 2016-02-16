@@ -1,4 +1,4 @@
-defmodule About_Enums do
+defmodule AboutEnums do
   use Koans
 
   think "Output each element on its own line" do

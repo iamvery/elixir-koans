@@ -1,4 +1,4 @@
-defmodule About_Maps do
+defmodule AboutMaps do
   use Koans
 
   think "maps are a key-value store" do

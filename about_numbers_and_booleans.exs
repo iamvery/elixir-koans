@@ -1,4 +1,4 @@
-defmodule About_Numbers_and_booleans do
+defmodule AboutNumbersAndBooleans do
   use Koans
 
   think "Basics numbers types" do

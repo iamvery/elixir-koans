@@ -1,4 +1,4 @@
-defmodule About_Anonymous_Functions do
+defmodule AboutAnonymousFunctions do
   use Koans
 
   think "Declaring an anonymous function referenced by a_variable" do

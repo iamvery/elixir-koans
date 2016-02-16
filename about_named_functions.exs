@@ -1,4 +1,4 @@
-defmodule About_Named_Functions do
+defmodule AboutNamedFunctions do
   use Koans
 
   def hello(name) do

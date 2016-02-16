@@ -1,4 +1,4 @@
-defmodule About_Tuples do
+defmodule AboutTuples do
   use Koans
 
   think "Getting tuples size is a kernel feature" do

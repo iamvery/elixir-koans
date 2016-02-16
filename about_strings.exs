@@ -1,4 +1,4 @@
-defmodule About_Strings do
+defmodule AboutStrings do
   use Koans
 
   think "creating a new string is easy" do

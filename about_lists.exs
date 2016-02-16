@@ -1,4 +1,4 @@
-defmodule About_Lists do
+defmodule AboutLists do
   use Koans
 
   think "Create your first list" do
