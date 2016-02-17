@@ -53,7 +53,7 @@ defmodule Koans do
     end
   end
 
-  def stop_to_learn(error, meditation, case) do
+  defp stop_to_learn(error, meditation, case) do
     Koans.Formatter.failure_message(error, meditation, case)
     |> IO.puts
     exit(:shutdown)
