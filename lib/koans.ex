@@ -13,7 +13,7 @@ defmodule Koans do
   defmacro __using__([]) do
     quote do
       import ExUnit.Assertions
-      import Koans, only: [think: 2, stop_to_learn: 3, meditate: 1, __?: 0, assert_?: 1]
+      import Koans, only: [think: 2, meditate: 1, __?: 0, assert_?: 1]
     end
   end
 
@@ -53,7 +53,7 @@ defmodule Koans do
     end
   end
 
-  def stop_to_learn(error, meditation, case) do
+  defp stop_to_learn(error, meditation, case) do
     Koans.Formatter.failure_message(error, meditation, case)
     |> IO.puts
     exit(:shutdown)
