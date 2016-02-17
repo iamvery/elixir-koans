@@ -18,8 +18,12 @@ defmodule Koans do
   end
 
   def start do
-    Agent.start_link(fn -> [] end, name: @name)
+    start_link
     System.at_exit(fn 0 -> run end)
+  end
+
+  defp start_link do
+    Agent.start_link(fn -> [] end, name: @name)
   end
 
   def add(koan) do
