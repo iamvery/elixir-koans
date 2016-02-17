@@ -31,11 +31,11 @@ defmodule Koans do
   end
 
   def load do
+    start_link
     @lessons |> Enum.each(&Code.load_file/1)
   end
 
   def start do
-    start_link
     System.at_exit(fn 0 -> run end)
   end
 
