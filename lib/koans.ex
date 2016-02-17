@@ -9,12 +9,29 @@ end
 
 defmodule Koans do
   @name __MODULE__
+  @lessons [
+    "about_asserts.exs",
+    "about_numbers_and_booleans.exs",
+    "about_strings.exs",
+    "about_lists.exs",
+    "about_enums.exs",
+    "about_tuples.exs",
+    "about_maps.exs",
+    "about_anonymous_functions.exs",
+    "about_named_functions.exs",
+    "about_match_variables.exs",
+  ]
+
 
   defmacro __using__([]) do
     quote do
       import ExUnit.Assertions
       import Koans, only: [think: 2, meditate: 1, __?: 0, assert_?: 1]
     end
+  end
+
+  def load do
+    @lessons |> Enum.each(&Code.load_file/1)
   end
 
   def start do
