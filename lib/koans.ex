@@ -41,7 +41,7 @@ defmodule Koans do
       problem in [ExUnit.AssertionError, Koans.MeditateWarning] ->
         stop_to_learn(problem, koan, module)
     end
-    # TODO congratulate success
+    success(module, koan)
   end
 
   defmacro think(message, lesson) do
@@ -54,9 +54,20 @@ defmodule Koans do
   end
 
   defp stop_to_learn(error, meditation, case) do
+    failure(case, meditation)
     Koans.Formatter.failure_message(error, meditation, case)
     |> IO.puts
     exit(:shutdown)
+  end
+
+  defp failure(module, koan) do
+    IO.ANSI.format([:red, "✗ #{module}: #{koan}\n"])
+    |> IO.puts
+  end
+
+  defp success(module, koan) do
+    IO.ANSI.format([:green, "✓ #{module}: #{koan}"])
+    |> IO.puts
   end
 
   def meditate(subject) do
