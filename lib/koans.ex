@@ -78,7 +78,7 @@ defmodule Koans do
     failure(case, meditation)
     Koans.Formatter.failure_message(error, meditation, case)
     |> IO.puts
-    exit(:shutdown)
+    exit({:shutdown, 1})
   end
 
   defp failure(module, koan) do
