@@ -54,7 +54,7 @@ defmodule AboutTuples do
       assert a == 3
     end
 
-    assert is_tuple(quoted_block)
+    assert Koans.Check.tuple?(quoted_block)
     assert tuple_size(quoted_block) == __?
   end
 
