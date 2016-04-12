@@ -204,42 +204,37 @@ defmodule AboutEnums do
     assert Enum.min_by(list, &String.length(&1)) == __?
   end
 
+  defp numbers, do: 1..10
+
   think "partitioning" do
-    numbers = 1..10
     {left, right} = Enum.partition(numbers, fn(x) -> rem(x, 2) == 1 end)
     assert left == __?
     assert right == __?
   end
 
   think "reduction" do
-    numbers = 1..10
     result = Enum.reduce(numbers, 0, fn (x, acc) -> acc + x end)
     assert result == __?
   end
 
   think "rejection" do
-    numbers = 1..10
     result = Enum.reject(numbers, fn(x) -> rem(x, 2) == 1 end)
     assert result == __?
   end
 
   think "reversal" do
-    numbers = 1..10
     assert Enum.reverse(numbers) == __?
   end
 
   think "shuffle" do
-    numbers = 1..10
     assert_? Enum.shuffle(numbers) == numbers
   end
 
   think "slicing" do
-    numbers = 1..10
     assert Enum.slice(numbers, 2, 2) == __?
   end
 
   think "slicing goes too far" do
-    numbers = 1..10
     assert Enum.slice(numbers, 2, 100) == __?
   end
 
@@ -261,29 +256,24 @@ defmodule AboutEnums do
   end
 
   think "splitting while function is true" do
-    numbers = 1..10
     {left, right} = Enum.split_while(numbers, fn (x) -> x < 5 end)
     assert left == __?
     assert right == __?
   end
 
   think "taking some items" do
-    numbers = 1..10
     assert Enum.take(numbers, 2) == __?
   end
 
   think "taking some items the other way" do
-    numbers = 1..10
     assert Enum.take(numbers, -2) == __?
   end
 
   think "taking every so often" do
-    numbers = 1..10
     assert Enum.take_every(numbers, 3) == __?
   end
 
   think "taking while we can" do
-    numbers = 1..10
     assert Enum.take_while(numbers, fn (x) -> x < 5 end) == __?
   end
 end
