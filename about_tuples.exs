@@ -71,9 +71,6 @@ defmodule AboutTuples do
   end
 
   think "Are tuples enumerables ?" do
-    invalid_argument   = ArgumentError
-    undefined_protocol = Protocol.UndefinedError
-
     assert_raise __?, fn -> Enum.empty?({1, 2, 3}) end
     # Note:
     # Do you smell the underlying machinery that make list and tuple types differents ?
