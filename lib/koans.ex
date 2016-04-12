@@ -22,7 +22,6 @@ defmodule Koans do
     "about_match_variables.exs",
   ]
 
-
   defmacro __using__([]) do
     quote do
       import ExUnit.Assertions

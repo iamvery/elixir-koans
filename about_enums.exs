@@ -2,7 +2,7 @@ defmodule AboutEnums do
   use Koans
 
   think "Do something with each element" do
-    list = [__?, __?, __?]
+    list = [1, 2, 3]
     Enum.each(list, fn (x) -> is_integer(x) end)
   end
 
