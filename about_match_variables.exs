@@ -25,7 +25,7 @@ defmodule AboutMatchesVariables do
   end
 
   think "Error matching" do
-    assert_raise __?, fn -> [ a , a ] = [ 1 , 2 ] end
+    assert_raise MatchError, fn -> [ a , a ] = [ 1 , __? ] end
   end
 
   think "Matching an array inner an array" do
