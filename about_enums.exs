@@ -2,13 +2,14 @@ defmodule AboutEnums do
   use Koans
 
   think "Do something with each element" do
-    list = [1, 2, 3]
-    Enum.each(list, fn (x) -> assert_? x end)
+    list = [__?, __?, __?]
+    Enum.each(list, fn (x) -> is_integer(x) end)
   end
 
   think "Mapping over a list" do
     list = [1, 2, 3]
-    assert Enum.map(list, fn (x) -> __? end) == [2, 3, 4]
+    assert Enum.map(list, __?) == [2, 3, 4]
+    # Hint: Write a function!
   end
 
   think "concatenation" do
