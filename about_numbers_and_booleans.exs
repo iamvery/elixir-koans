@@ -3,15 +3,14 @@ defmodule AboutNumbersAndBooleans do
 
   think "Basics numbers types" do
     an_integer = __?
-    a_float = 42.0
 
-    assert is_integer(an_integer)
+    assert Koans.Check.integer?(an_integer)
 
-    assert_? is_float(a_float)
+    assert_? Koans.Check.float?(42.0)
 
-    assert_? is_float(an_integer)
+    assert_? Koans.Check.float?(an_integer)
 
-    assert_? is_integer(a_float)
+    assert_? Koans.Check.integer?(42.0)
   end
 
   think "Is an hexadecimal number treated as an integer" do
@@ -25,38 +24,27 @@ defmodule AboutNumbersAndBooleans do
   end
 
   think "You can use _ as separator in integer" do
-    an_integer = 100_000_000
-    assert_? is_integer(an_integer)
+    assert_? is_integer(100_000_000)
   end
 
   think "Value equality operator has an usual expectation" do
-    an_integer = 4
-    a_float = 4.0
-    assert_? an_integer == a_float
+    assert_? 4 == 4.0
   end
 
   think "Value inequality operator has an usual expectation" do
-    an_integer = 4
-    a_float = 2.0
-    assert_? an_integer != a_float
+    assert_? 4 != 2.0
   end
 
   think "Strict equality operator take care about types" do
-    an_integer = 4
-    a_float = 4.0
-    assert_? an_integer === a_float
+    assert_? 4 === 4.0
   end
 
   think "Strict inequality operator take care about types" do
-    an_integer = 4
-    a_float = 4.0
-    assert_? an_integer !== a_float
+    assert_? 4 !== 4.0
   end
 
   think "Comparing two values considering type" do
-    a_float = 4.0
-    another_float = 4.0
-    assert_? a_float === another_float
+    assert_? 4.0 === 4.0
   end
 
   think "Are booleans integers ?" do
@@ -70,20 +58,14 @@ defmodule AboutNumbersAndBooleans do
   end
 
   think "That's true if a_boolean is true ortherwise b_boolean" do
-    a_boolean = false
-    b_boolean = true
-    assert_? a_boolean or b_boolean
+    assert_? false or true
   end
 
   think "Operator || is a relaxed boolean operator, that's true if a_variable or b_variable isn't nil" do
-    a_variable = 42
-    b_variable = nil
-    assert_? a_variable || b_variable
+    assert_? 42 || nil
   end
 
   think "Operator && is a relaxed boolean operator, that's true if a_variable and b_variable isn't nil" do
-    a_variable = 42
-    b_variable = 5.0
-    assert_? a_variable && b_variable
+    assert_? 42 && 5.0
   end
 end

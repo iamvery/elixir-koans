@@ -4,7 +4,7 @@ defmodule AboutAnonymousFunctions do
   think "Declaring an anonymous function referenced by a_variable" do
     a_variable = fn -> "Here the body anonymous function!" end
 
-    assert_? a_variable.() == "Here the body anonymous function!"
+    assert a_variable.() == __?
   end
 
   think "Anonymous function and parameter" do
