@@ -5,11 +5,8 @@ defmodule AboutNumbersAndBooleans do
     an_integer = __?
 
     assert Koans.Check.integer?(an_integer)
-
     assert_? Koans.Check.float?(42.0)
-
     assert_? Koans.Check.float?(an_integer)
-
     assert_? Koans.Check.integer?(42.0)
   end
 
