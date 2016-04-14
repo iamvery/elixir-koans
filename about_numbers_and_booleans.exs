@@ -21,7 +21,7 @@ defmodule AboutNumbersAndBooleans do
   end
 
   think "You can use _ as separator in integer" do
-    assert_? is_integer(100_000_000)
+    assert 100_000_000 == __?
   end
 
   think "Value equality operator has an usual expectation" do
