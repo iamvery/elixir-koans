@@ -103,22 +103,22 @@ defmodule AboutStrings do
   end
 
   think "Left justification" do
-    a_string = "3"
+    a_string = "2"
     assert String.ljust(a_string, 3) == __?
   end
 
   think "Left justification with a specific character" do
-    a_string = "3"
+    a_string = "2"
     assert String.ljust(a_string, 3, ?0) == __?
   end
 
   think "Right justification" do
-    a_string = "3"
+    a_string = "2"
     assert String.rjust(a_string, 3) == __?
   end
 
   think "Right justification with a specific character" do
-    a_string = "2"
+    a_string = "7"
     assert String.rjust(a_string, 3, ?0) == __?
   end
 
