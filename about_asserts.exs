@@ -30,5 +30,11 @@ defmodule AboutAsserts do
     message = "Assertion with " <> __? <> " failed"
     assert_raise ExUnit.AssertionError, message, is_1_greater_than_2?
   end
+
+  think "Some values are truthy; some values are falsy" do
+    assert_? 42
+    assert_? :foo
+    assert_? nil
+  end
 end
 
