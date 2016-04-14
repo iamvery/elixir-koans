@@ -24,27 +24,24 @@ defmodule AboutNumbersAndBooleans do
     assert 100_000_000 == __?
   end
 
-  think "Value equality operator has an usual expectation" do
+  think "Integers and floats have value equality" do
     assert_? 4 == 4.0
   end
 
-  think "Value inequality operator has an usual expectation" do
+  think "Integers and floats have value inequality" do
     assert_? 4 != 2.0
   end
 
-  think "Strict equality operator take care about types" do
+  think "Strict equality checks types" do
     assert_? 4 === 4.0
-  end
-
-  think "Strict inequality operator take care about types" do
-    assert_? 4 !== 4.0
-  end
-
-  think "Comparing two values considering type" do
     assert_? 4.0 === 4.0
   end
 
-  think "Are booleans integers ?" do
+  think "Strict inequality checks types" do
+    assert_? 4 !== 4.0
+  end
+
+  think "Are integers booleans?" do
     assert_? is_integer(true)
     assert_? is_boolean(0)
   end
