@@ -128,8 +128,8 @@ defmodule AboutStrings do
   end
 
   think "Converting to an integer" do
-    a_string = "10"
-    assert String.to_integer(a_string) == __?
+    assert String.to_integer("10") == 10
+    assert_raise ArgumentError, fn -> String.to_integer(__?) end
   end
 
   think "Converting to an integer using a different base" do
@@ -139,7 +139,7 @@ defmodule AboutStrings do
   end
 
   think "Converting to a float" do
-    a_string = "10.99"
-    assert String.to_float(a_string) == __?
+    assert String.to_float("10.99") == 10.99
+    assert_raise ArgumentError, fn -> String.to_float(__?) end
   end
 end
