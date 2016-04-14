@@ -56,7 +56,7 @@ defmodule AboutMaps do
 
   think "Popping a non-existant key" do
     map = %{amount: 10}
-    { value, map } = Map.pop(map, :age)
+    {value, map} = Map.pop(map, :age)
     assert value == __?
     assert map == __?
   end
