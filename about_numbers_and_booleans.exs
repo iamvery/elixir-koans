@@ -51,15 +51,22 @@ defmodule AboutNumbersAndBooleans do
     assert :true == __?
   end
 
-  think "That's true if a_boolean is true ortherwise b_boolean" do
+  think "Boolean OR returns left side if true, otherwise right side" do
+    assert_? true or true
+    assert_? true or false
     assert_? false or true
+    assert_? false or false
   end
 
-  think "Operator || is a relaxed boolean operator, that's true if a_variable or b_variable isn't nil" do
-    assert_? 42 || nil
+  think "Boolean operators check their argument's type" do
+    message = "argument error: " <> __?
+    assert_raise ArgumentError, message, fn -> 1 or true end
   end
 
-  think "Operator && is a relaxed boolean operator, that's true if a_variable and b_variable isn't nil" do
-    assert_? 42 && 5.0
+  think "Other binary operators are relaxed about their argument's type" do
+    assert 42  || 84  == __?
+    assert 42  || nil == __?
+    assert nil || 84  == __?
+    assert nil || nil == __?
   end
 end
