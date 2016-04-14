@@ -11,23 +11,23 @@ defmodule AboutLists do
     assert length(a_list) == __?
   end
 
-  think "Elixir provide special operator to concatenate lists" do
+  think "Elixir provides a special operator to concatenate lists" do
     assert [1, 2] ++ [3] == __?
   end
 
-  think "Elixir provide special operator to remove element from list" do
+  think "Elixir provides a special operator to remove an element from a list" do
     assert [1, 2, 3] -- [2] == __?
   end
 
-  think "Only first element is removed with truncate operator" do
+  think "Only the first element is removed with truncate operator" do
     assert [:foo, :bar, :foo] -- [:foo] == __?
   end
 
-  think "Truncate operator do nothing when element not in list" do
+  think "The truncate operator does nothing when element not in list" do
     assert_? [:foo, :bar] -- [:baz] == [:foo, :bar]
   end
 
-  think "The in operator test if element is present inner an enum" do
+  think "The in operator tests if element is present in a list" do
     assert_? :bar in [:foo, :bar]
   end
 end
