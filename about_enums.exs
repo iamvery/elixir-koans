@@ -215,6 +215,7 @@ defmodule AboutEnums do
 
   think "Shuffle" do
     assert_? Enum.shuffle(numbers) == numbers
+    # Note: It's possible for this to fail. Does shuffle guarantee difference?
   end
 
   think "Slicing" do
