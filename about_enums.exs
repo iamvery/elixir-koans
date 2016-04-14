@@ -18,14 +18,9 @@ defmodule AboutEnums do
     assert Enum.concat(list_1, list_2) == __?
   end
 
-  think "Empty, or not?" do
-    list = [1, 2, 3]
-    assert Enum.empty?(list) == __?
-  end
-
-  think "Not empty?" do
-    list = []
-    assert Enum.empty?(list) == __?
+  think "Is an enumerable empty?" do
+    assert_? Enum.empty?([1, 2, 3])
+    assert_? Enum.empty?([])
   end
 
   think "Check if all items match" do
@@ -126,15 +121,7 @@ defmodule AboutEnums do
   think "Dropping elements" do
     list = [1, 2, 3, 4]
     assert Enum.drop(list, 2) == __?
-  end
-
-  think "dropping a lot of items" do
-    list = [1, 2, 3, 4]
     assert Enum.drop(list, 10) == __?
-  end
-
-  think "dropping with negative numbers" do
-    list = [1, 2, 3, 4]
     assert Enum.drop(list, -1) == __?
   end
 
