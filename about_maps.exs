@@ -92,7 +92,6 @@ defmodule AboutMaps do
   think "Adding a new pair that doesn't exist" do
     map = %{name: "Ryan", age: 27}
     assert Map.put_new(map, :likes, "Programming") == __?
-    # Distinctly different from Map.put/3
     assert Map.put_new(map, :name, "Ryan B.") == __?
   end
 
