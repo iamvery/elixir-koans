@@ -64,9 +64,9 @@ defmodule AboutNumbersAndBooleans do
   end
 
   think "Other binary operators are relaxed about their argument's type" do
-    assert 42  || 84  == __?
-    assert 42  || nil == __?
-    assert nil || 84  == __?
-    assert nil || nil == __?
+    assert __? == 42  || 84
+    assert __? == 42  || nil
+    assert __? == nil || 84
+    assert __? == nil || nil
   end
 end
