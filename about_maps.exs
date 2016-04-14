@@ -8,8 +8,9 @@ defmodule AboutMaps do
   end
 
   think "Keys can be any value" do
-    map = %{"name" => "Ryan"}
+    map = %{"name" => "Ryan", {:ok} => true}
     assert map["name"] == __?
+    assert map[{:ok}] == __?
   end
 
   think "There is more than one way to access a map" do
