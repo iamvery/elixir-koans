@@ -16,7 +16,7 @@ defmodule AboutTuples do
     quote do: :erlang.element(unquote(index), unquote(tuple))
   end
 
-  think "In erlang tuples and lists start at index 1, which is different in elixir" do
+  think "In erlang tuples and lists start at index 1, which is different in Elixir" do
     a_tuple = {:foo, :bar}
     foo_index = 0
     assert elem(a_tuple, foo_index) == erlang_elem(a_tuple, foo_index + __?)
@@ -30,19 +30,19 @@ defmodule AboutTuples do
     assert elem(baz_tuple, 0) == __?
   end
 
-  think "Setting a tuple element that not exists raise an argument error" do
+  think "Setting a tuple element that does not exist raises an argument error" do
     a_tuple = {:foo, :bar}
 
     assert_raise ArgumentError, fn -> put_elem(a_tuple, __?, :baz) end
   end
 
-  think "Can insert a tuple element" do
+  think "Insert an element at a position" do
     a_tuple = {:foo, :bar}
     baz_tuple = Tuple.insert_at(a_tuple, 2, :baz)
     assert elem(baz_tuple, 2) == __?
   end
 
-  think "Inserting a tuple element raise an argument error if index is invalid" do
+  think "Inserting a tuple element raises an argument error if index is invalid" do
     a_tuple = {:foo, :bar}
     assert_raise ArgumentError, fn -> Tuple.insert_at(a_tuple, __?, :baz) end
   end
@@ -62,17 +62,17 @@ defmodule AboutTuples do
     # Note: unquote is the reverse of quote
     # It gives a block from its representation
     unquoted_block = unquote {:"{}", [], [1, 2, 3]}
-    # Note: it's an hungarian notation
-    # the atom :"{}" represent the function
-    # the list [] contains metadatas like the line and module where code is defined
+    # Note: it's in hungarian notation
+    # the atom :"{}" represents the function
+    # the list [] contains metadata like the line and module where code is defined
     # the list [1, 2, 3] are arguments passed to the function
-    # For more infos see Macros and quote/unquote functions
+    # For more info see Macros and the quote/unquote functions
     assert unquoted_block == __?
   end
 
-  think "Are tuples enumerables ?" do
+  think "Are tuples enumerable?" do
     assert_raise __?, fn -> Enum.empty?({1, 2, 3}) end
     # Note:
-    # Do you smell the underlying machinery that make list and tuple types differents ?
+    # Do you smell the underlying machinery that make lists and tuple types different?
   end
 end
