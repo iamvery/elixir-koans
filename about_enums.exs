@@ -12,7 +12,7 @@ defmodule AboutEnums do
     # Hint: Write a function!
   end
 
-  think "concatenation" do
+  think "Concatenation" do
     list_1 = [1, 2, 3]
     list_2 = [4, 5, 6]
     assert Enum.concat(list_1, list_2) == __?
@@ -38,12 +38,12 @@ defmodule AboutEnums do
     assert Enum.any?(list, fn (x) -> x < 2 end) == __?
   end
 
-  think "Is it there, or not?" do
+  think "Is it in the collection?" do
     list = [:a, :b, :c]
     assert Enum.member?(list, :d) == __?
   end
 
-  think "What element is first?" do
+  think "Find an element at an index" do
     list = [:a, :b, :c, :d]
     assert Enum.at(list, 0) == __?
   end
@@ -53,77 +53,77 @@ defmodule AboutEnums do
     assert Enum.at(list, 5) == __?
   end
 
-  think "at can take a default" do
+  think "It can take a default" do
     list = [:a, :b, :c]
     assert Enum.at(list, 5, :something) == __?
   end
 
-  think "fetch is like at" do
+  think "Enum.fetch/2 is similar to Enum.at/2" do
     list = [:a, :b, :c]
     assert Enum.fetch(list, 0) == __?
   end
 
-  think "fetch tells you if it can't find an element" do
+  think "Enum.fetch/2 tells you if it can't find an element" do
     list = [:a, :b, :c]
     assert Enum.fetch(list, 4) == __?
   end
 
-  think "fetch! will raise an exception if it can't find an element" do
+  think "Enum.fetch!/2 will raise an exception if it can't find an element" do
     list = [:a, :b, :c]
     assert_raise __?, fn -> Enum.fetch!(list, 4) end
   end
 
-  think "find the first element which matches" do
+  think "Find the first element that matches" do
     list = [1, 2, 3, 4]
     assert Enum.find(list, fn (x) -> x > 2 end) == __?
   end
 
-  think "what happens when find can't find?" do
+  think "What happens when find can't find?" do
     list = [1, 2, 3, 4, 5]
     assert Enum.find(list, fn (x) -> x > 5 end) == __?
   end
 
-  think "find takes a default" do
+  think "Find takes a default" do
     list = [1, 2, 3]
     assert Enum.find(list, 4, fn (x) -> x > 3 end) == __?
   end
 
-  think "what index is this number at?" do
+  think "What index is this number at?" do
     list = [1, 2, 3]
     assert Enum.find_index(list, fn(x) -> x == 2 end) == __?
   end
 
-  think "finding and manipulating a value" do
+  think "Find and manipulate a value" do
     list = [1, 2, 3]
     assert Enum.find_value(list, fn (x) -> rem(x, 2) == 1 end) == __?
   end
 
-  think "each element with its index" do
+  think "Get each element with its index" do
     list = [:a, :b, :c]
     assert Enum.with_index(list) == __?
   end
 
-  think "enums can be chunked" do
+  think "Chunking elements into group" do
     list = [1, 2, 3, 4, 5, 6]
     assert Enum.chunk(list, 2) == __?
   end
 
-  think "chunking can happen in steps" do
+  think "Chunking elements in steps" do
     list = [1, 2, 3, 4, 5, 6]
     assert Enum.chunk(list, 2, 1) == __?
   end
 
-  think "chunking can have padding" do
+  think "Chunking elements in steps with padding" do
     list = [1, 2, 3, 4, 5, 6]
     assert Enum.chunk(list, 3, 2, [7]) == __?
   end
 
-  think "chunking by unique values" do
+  think "Chunking elements with a function" do
     list = [3, 4, 5, 6, 7, 8]
     assert Enum.chunk_by(list, fn (x) -> x > 5 end) == __?
   end
 
-  think "dropping items" do
+  think "Dropping elements" do
     list = [1, 2, 3, 4]
     assert Enum.drop(list, 2) == __?
   end
@@ -138,142 +138,142 @@ defmodule AboutEnums do
     assert Enum.drop(list, -1) == __?
   end
 
-  think "dropping while a condition is met" do
+  think "Dropping while a condition is met" do
     list = [1, 2, 3, 4]
     assert Enum.drop_while(list, fn (x) -> x < 2 end) == __?
   end
 
-  think "filtering" do
+  think "Filtering" do
     list = [1, 2, 3, 4]
     assert Enum.filter(list, fn (x) -> rem(x, 2) == 1 end) == __?
   end
 
-  think "filtering + mapping" do
+  think "Filtering and mapping" do
     list = [1, 2, 3, 4]
     assert Enum.filter_map(list, fn (x) -> rem(x, 2) == 1 end, &(&1 * 2)) == __?
   end
 
-  think "flat mapping" do
+  think "Flat mapping" do
     list = Enum.flat_map([{1, 3}, {4, 6}], fn({x, y}) -> x..y end)
     assert list == __?
   end
 
-  think "joining" do
+  think "Joining into a string" do
     list = [1, 2, 3]
     assert Enum.join(list) == __?
   end
 
-  think "joining with a separator" do
+  think "Joining with a separator" do
     list = [1, 2, 3]
     assert Enum.join(list, ",") == __?
   end
 
-  think "mapping and joining" do
+  think "Mapping and joining" do
     list = [1, 2, 3]
     assert Enum.map_join(list, fn (x) -> x * 2 end) == __?
   end
 
-  think "map reduce" do
+  think "Map reduce" do
     list = [4, 5, 6]
     assert Enum.map_reduce(list, 0, fn (x, acc) -> {x * 2, x + acc} end) == __?
   end
 
-  think "zipping" do
+  think "Zipping collections together" do
     list_1 = [1, 2, 3]
     list_2 = [4, 5, 6]
     assert Enum.zip(list_1, list_2) == __?
   end
 
-  think "what's the maximum value in this list?" do
+  think "Find the max value in a collection" do
     list = [6, 1, 5, 2, 4, 3]
     assert Enum.max(list) == __?
   end
 
-  think "getting the maximum by function" do
+  think "Find the max value using a function" do
     list = ["the", "longest", "word", "is", "expected"]
     assert Enum.max_by(list, &String.length(&1)) == __?
   end
 
-  think "what's the minimum value in this list?" do
+  think "Find the minimum value in a collection" do
     list = [6, 1, 5, 2, 4, 3]
     assert Enum.min(list) == __?
   end
 
-  think "getting the minimum by function" do
+  think "Find the minimum value using a function" do
     list = ["the", "shortest", "word", "is", "expected"]
     assert Enum.min_by(list, &String.length(&1)) == __?
   end
 
   defp numbers, do: 1..10
 
-  think "partitioning" do
+  think "Partitioning" do
     {left, right} = Enum.partition(numbers, fn(x) -> rem(x, 2) == 1 end)
     assert left == __?
     assert right == __?
   end
 
-  think "reduction" do
+  think "Reduction" do
     result = Enum.reduce(numbers, 0, fn (x, acc) -> acc + x end)
     assert result == __?
   end
 
-  think "rejection" do
+  think "Rejection" do
     result = Enum.reject(numbers, fn(x) -> rem(x, 2) == 1 end)
     assert result == __?
   end
 
-  think "reversal" do
+  think "Reversal" do
     assert Enum.reverse(numbers) == __?
   end
 
-  think "shuffle" do
+  think "Shuffle" do
     assert_? Enum.shuffle(numbers) == numbers
   end
 
-  think "slicing" do
+  think "Slicing" do
     assert Enum.slice(numbers, 2, 2) == __?
   end
 
-  think "slicing goes too far" do
+  think "Slicing beyond length" do
     assert Enum.slice(numbers, 2, 100) == __?
   end
 
-  think "sorting" do
+  think "Sorting" do
     numbers = [1, 6, 3, 8, 4, 2, 9, 5, 7]
     assert Enum.sort(numbers) == __?
   end
 
-  think "unique items only, please" do
+  think "Unique elements" do
     numbers = [1, 1, 2, 3, 3, 4]
     assert Enum.uniq(numbers) == __?
   end
 
-  think "splitting" do
+  think "Splitting" do
     numbers = [1, 2, 3, 4]
     {left, right} = Enum.split(numbers, 2)
     assert left == __?
     assert right == __?
   end
 
-  think "splitting while function is true" do
+  think "Splitting with function" do
     {left, right} = Enum.split_while(numbers, fn (x) -> x < 5 end)
     assert left == __?
     assert right == __?
   end
 
-  think "taking some items" do
+  think "Take some elements" do
     assert Enum.take(numbers, 2) == __?
   end
 
-  think "taking some items the other way" do
+  think "Take some elements from the end" do
     assert Enum.take(numbers, -2) == __?
   end
 
-  think "taking every so often" do
+  think "Take every few elements" do
     assert Enum.take_every(numbers, 3) == __?
   end
 
-  think "taking while we can" do
+  think "Take while function is true" do
     assert Enum.take_while(numbers, fn (x) -> x < 5 end) == __?
   end
 end
