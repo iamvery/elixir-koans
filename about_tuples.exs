@@ -11,15 +11,9 @@ defmodule AboutTuples do
     assert elem(a_tuple, 0) == __?
   end
 
-  defmacrop erlang_elem(tuple, index) do
-    # Note: Elixir provides access to erlang primitives with atom :erlang
-    quote do: :erlang.element(unquote(index), unquote(tuple))
-  end
-
   think "In erlang tuples and lists start at index 1, which is different in Elixir" do
     a_tuple = {:foo, :bar}
-    foo_index = 0
-    assert elem(a_tuple, foo_index) == erlang_elem(a_tuple, foo_index + __?)
+    assert elem(a_tuple, 0) == :erlang.element(__?, a_tuple)
   end
 
   think "Can set a tuple element" do
