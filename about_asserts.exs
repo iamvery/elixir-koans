@@ -9,6 +9,11 @@ defmodule AboutAsserts do
     refute __?
   end
 
+  think "Assertions are defined by ExUnit, an Elixir testing library" do
+    ExUnit.Assertions.assert __?
+    ExUnit.Assertions.refute __?
+  end
+
   think "Enlightenment may be more easily achieved with appropriate messages." do
     assert false, "This should be true -- Please fix this"
   end
