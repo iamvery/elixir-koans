@@ -10,7 +10,7 @@ defmodule AboutNumbersAndBooleans do
     assert_? Koans.Check.integer?(42.0)
   end
 
-  think "Is a hexadecimal number treated as an integer?" do
+  think "Is a hexadecimal number an integer?" do
     assert_? is_integer(0x2A)
   end
 
