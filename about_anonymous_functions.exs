@@ -7,13 +7,13 @@ defmodule AboutAnonymousFunctions do
     assert a_variable.() == __?
   end
 
-  think "Anonymous function and parameter" do
+  think "Anonymous function with parameter" do
     a_variable = fn(name) -> "Hello #{name}!" end
 
     assert a_variable.("John") == __?
   end
 
-  think "Anonymous functions in a concise way" do
+  think "Anonymous function short-hand" do
     a_variable = &("Hello #{&1}!")
 
     assert a_variable.("John") == __?
@@ -39,8 +39,7 @@ defmodule AboutAnonymousFunctions do
     assert a_variable.("I want a float") == __?
   end
 
-
-  think "It's possible to pass a function in argument of function!" do
+  think "Function as the argument of a function!" do
     add_five_function = fn(value) -> 5 + value end
     add_ten_after_call_add_five_function = fn(function, value) -> function.(value) + 10 end
 
