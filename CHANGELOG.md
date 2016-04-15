@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 - Examples may now be focused on by adding `@tag :focus` before them. (https://github.com/iamvery/elixir-koans/pull/13)
 
 ### Changed
+- Various rewording, additional examples, and general housekeeping throughout remaining lessons (https://github.com/iamvery/elixir-koans/pull/17)
 - Rewording and additional examples throughout "asserts" and "numbers and booleans" (https://github.com/iamvery/elixir-koans/pull/12)
 
 ## [v1]
