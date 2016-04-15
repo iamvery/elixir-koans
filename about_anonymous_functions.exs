@@ -30,9 +30,9 @@ defmodule AboutAnonymousFunctions do
   end
 
   think "Function as the argument of a function!" do
-    add_five_function = fn(value) -> 5 + value end
-    add_ten_after_call_add_five_function = fn(function, value) -> function.(value) + 10 end
+    add_five = fn(value) -> 5 + value end
+    add_ten_to_result = fn(function, value) -> function.(value) + 10 end
 
-    assert add_ten_after_call_add_five_function.(add_five_function, 5) == __?
+    assert add_ten_to_result.(add_five, 5) == __?
   end
 end
