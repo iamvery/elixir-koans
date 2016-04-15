@@ -54,8 +54,19 @@ defmodule Koans do
   def run do
     koans
     # TODO lazy iteration
+    |> focus
     |> Enum.reverse
     |> Enum.each(&exec/1)
+  end
+
+  defp focus(koans) do
+    focused_koans = Enum.filter(koans, fn {_,_,tag} -> tag == :focus end)
+
+    if Enum.empty?(focused_koans) do
+      koans
+    else
+      focused_koans
+    end
   end
 
   defp exec({module, koan, _tag}) do
