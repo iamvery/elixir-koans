@@ -7,7 +7,7 @@ defmodule AboutProcesses do
     assert_? pid_name =~ ~r/#PID<\d+\.\d+\.\d+>/
   end
 
-  think "Processes receive messages" do
+  think "Processes send and receive messages" do
     send self, {:hello, "world"}
 
     receive do
