@@ -58,7 +58,7 @@ defmodule Koans do
     |> Enum.each(&exec/1)
   end
 
-  defp exec({module, koan}) do
+  defp exec({module, koan, _tag}) do
     try do
       apply(module, koan, [])
     rescue
@@ -71,8 +71,11 @@ defmodule Koans do
   defmacro think(message, lesson) do
     name = :"#{message}"
     quote do
+      tag = Module.get_attribute(__MODULE__, :tag)
+      Module.put_attribute(__MODULE__, :tag, nil)
+
       Module.put_attribute(__MODULE__, :meditation, unquote(message))
-      Koans.add({__MODULE__, unquote(name)})
+      Koans.add({__MODULE__, unquote(name), tag})
       def unquote(name)(), do: unquote(lesson)
     end
   end
