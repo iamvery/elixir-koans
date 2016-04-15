@@ -52,10 +52,24 @@ defmodule Koans do
   end
 
   def run do
-    koans |> Enum.reverse |> Enum.each(&exec/1)
+    koans
+    # TODO lazy iteration
+    |> focus
+    |> Enum.reverse
+    |> Enum.each(&exec/1)
   end
 
-  defp exec({module, koan}) do
+  defp focus(koans) do
+    focused_koans = Enum.filter(koans, fn {_,_,tag} -> tag == :focus end)
+
+    if Enum.empty?(focused_koans) do
+      koans
+    else
+      focused_koans
+    end
+  end
+
+  defp exec({module, koan, _tag}) do
     try do
       apply(module, koan, [])
     rescue
@@ -68,9 +82,14 @@ defmodule Koans do
   defmacro think(message, lesson) do
     name = :"#{message}"
     quote do
-      Module.put_attribute(__MODULE__, :meditation, unquote(message))
-      Koans.add({__MODULE__, unquote(name)})
-      def unquote(name)(), do: unquote(lesson)
+      tag = Module.get_attribute(__MODULE__, :tag)
+      Module.put_attribute(__MODULE__, :tag, nil)
+
+      unless tag == :skip do
+        Module.put_attribute(__MODULE__, :meditation, unquote(message))
+        Koans.add({__MODULE__, unquote(name), tag})
+        def unquote(name)(), do: unquote(lesson)
+      end
     end
   end
 
