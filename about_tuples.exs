@@ -59,7 +59,7 @@ defmodule AboutTuples do
     # Note: it's in hungarian notation
     # the atom :"{}" represents the function
     # the list [] contains metadata like the line and module where code is defined
-    # the list [1, 2, 3] are arguments passed to the function
+    # the list [1, 2, 3] is the arguments passed to the function
     # For more info see Macros and the quote/unquote functions
     assert unquoted_block == __?
   end

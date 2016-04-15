@@ -83,7 +83,7 @@ defmodule AboutEnums do
     assert Enum.find(list, 4, fn (x) -> x > 3 end) == __?
   end
 
-  think "What index is this number at?" do
+  think "What is the index of an element?" do
     list = [1, 2, 3]
     assert Enum.find_index(list, fn(x) -> x == 2 end) == __?
   end
@@ -98,7 +98,7 @@ defmodule AboutEnums do
     assert Enum.with_index(list) == __?
   end
 
-  think "Chunking elements into group" do
+  think "Chunking elements into groups" do
     list = [1, 2, 3, 4, 5, 6]
     assert Enum.chunk(list, 2) == __?
   end

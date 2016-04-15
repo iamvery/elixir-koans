@@ -23,7 +23,7 @@ defmodule AboutLists do
     assert [:foo, :bar, :foo] -- [:foo] == __?
   end
 
-  think "The truncate operator does nothing when element not in list" do
+  think "The truncate operator does nothing when an element is not in the list" do
     assert_? [:foo, :bar] -- [:baz] == [:foo, :bar]
   end
 

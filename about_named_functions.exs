@@ -5,7 +5,7 @@ defmodule AboutNamedFunctions do
     "Hello #{name}"
   end
 
-  think "Calling  a named function" do
+  think "Calling a named function" do
     assert hello("world!") == __?
   end
 
@@ -13,7 +13,7 @@ defmodule AboutNamedFunctions do
     "Hello #{name} from #{country}"
   end
 
-  think "A function with the same name, but different argument is a different function" do
+  think "A function with the same name, but different number of arguments is a different function" do
     assert hello("world", "France!") == __?
   end
 
