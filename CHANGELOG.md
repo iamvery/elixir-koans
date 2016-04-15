@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+- Rewording and additional examples throughout "asserts" and "numbers and booleans" (https://github.com/iamvery/elixir-koans/pull/12)
+
 ## [v1]
 
 ### Fixed
