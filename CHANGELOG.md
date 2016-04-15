@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+- Examples may now be skipped by adding `@tag :skip` before them. (https://github.com/iamvery/elixir-koans/pull/13)
+- Examples may now be focused on by adding `@tag :focus` before them. (https://github.com/iamvery/elixir-koans/pull/13)
+
 ### Changed
 - Rewording and additional examples throughout "asserts" and "numbers and booleans" (https://github.com/iamvery/elixir-koans/pull/12)
 
