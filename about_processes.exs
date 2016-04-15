@@ -1,10 +1,19 @@
 defmodule AboutProcesses do
   use Koans
 
-  think "You are a process with a process ID" do
-    pid_name = inspect(self)
+  think "Spawning a process executes a function" do
+    spawn __?
+    # Hint: Print something to the screen so you know something happened!
+  end
 
-    assert_? pid_name =~ ~r/#PID<\d+\.\d+\.\d+>/
+  think "Spawning a process returns a process ID (PID)" do
+    pid = spawn fn -> IO.puts "I am running in another process" end
+
+    assert_? is_pid(pid)
+  end
+
+  think "You are a process" do
+    assert_? is_pid(self)
   end
 
   think "Processes send and receive messages" do
@@ -13,11 +22,6 @@ defmodule AboutProcesses do
     receive do
       {:hello, message} -> assert message == __?
     end
-  end
-
-  think "A spawned process is a function running in parallel" do
-    spawn __?
-    # Hint: Print something to the screen so you know something happened!
   end
 
   think "Processes communicate with one another" do
