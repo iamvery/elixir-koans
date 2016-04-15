@@ -5,49 +5,43 @@ defmodule AboutNumbersAndBooleans do
     an_integer = __?
 
     assert Koans.Check.integer?(an_integer)
-
     assert_? Koans.Check.float?(42.0)
-
     assert_? Koans.Check.float?(an_integer)
-
     assert_? Koans.Check.integer?(42.0)
   end
 
-  think "Is an hexadecimal number treated as an integer" do
+  think "Is a hexadecimal number an integer?" do
     assert_? is_integer(0x2A)
   end
 
   think "Answer to the Ultimate Question of Life, the Universe, and Everything" do
-    an_hex = 0x20
+    a_hex = 0x20
     a_dec = 10
-    assert an_hex + a_dec == __?
+    assert a_hex + a_dec == __?
   end
 
   think "You can use _ as separator in integer" do
-    assert_? is_integer(100_000_000)
+    assert 100_000_000 == __?
   end
 
-  think "Value equality operator has an usual expectation" do
+  think "Integers and floats have value equality" do
     assert_? 4 == 4.0
   end
 
-  think "Value inequality operator has an usual expectation" do
+  think "Integers and floats have value inequality" do
     assert_? 4 != 2.0
   end
 
-  think "Strict equality operator take care about types" do
+  think "Strict equality checks types" do
     assert_? 4 === 4.0
-  end
-
-  think "Strict inequality operator take care about types" do
-    assert_? 4 !== 4.0
-  end
-
-  think "Comparing two values considering type" do
     assert_? 4.0 === 4.0
   end
 
-  think "Are booleans integers ?" do
+  think "Strict inequality checks types" do
+    assert_? 4 !== 4.0
+  end
+
+  think "Are integers booleans?" do
     assert_? is_integer(true)
     assert_? is_boolean(0)
   end
@@ -57,15 +51,22 @@ defmodule AboutNumbersAndBooleans do
     assert :true == __?
   end
 
-  think "That's true if a_boolean is true ortherwise b_boolean" do
+  think "Boolean OR returns left side if true, otherwise right side" do
+    assert_? true or true
+    assert_? true or false
     assert_? false or true
+    assert_? false or false
   end
 
-  think "Operator || is a relaxed boolean operator, that's true if a_variable or b_variable isn't nil" do
-    assert_? 42 || nil
+  think "Boolean operators check their argument's type" do
+    message = "argument error: " <> __?
+    assert_raise ArgumentError, message, fn -> 1 or true end
   end
 
-  think "Operator && is a relaxed boolean operator, that's true if a_variable and b_variable isn't nil" do
-    assert_? 42 && 5.0
+  think "Other binary operators are relaxed about their argument's type" do
+    assert __? == 42  || 84
+    assert __? == 42  || nil
+    assert __? == nil || 84
+    assert __? == nil || nil
   end
 end
