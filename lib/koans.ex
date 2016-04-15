@@ -14,12 +14,12 @@ defmodule Koans do
     "about_numbers_and_booleans.exs",
     "about_strings.exs",
     "about_lists.exs",
+    "about_matching.exs",
     "about_enums.exs",
     "about_tuples.exs",
     "about_maps.exs",
     "about_anonymous_functions.exs",
     "about_named_functions.exs",
-    "about_matching.exs",
   ]
 
 
