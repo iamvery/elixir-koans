@@ -29,16 +29,6 @@ defmodule AboutAnonymousFunctions do
     assert a_variable.("second body") == __?
   end
 
-  think "Another anonymous function with multiple implementation body" do
-    a_variable = fn
-                   "I want an integer" -> 42
-                   "I want a float" -> 1.9
-                 end
-
-    assert a_variable.("I want an integer") == __?
-    assert a_variable.("I want a float") == __?
-  end
-
   think "Function as the argument of a function!" do
     add_five_function = fn(value) -> 5 + value end
     add_ten_after_call_add_five_function = fn(function, value) -> function.(value) + 10 end
