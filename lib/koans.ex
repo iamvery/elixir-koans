@@ -19,7 +19,7 @@ defmodule Koans do
     "about_maps.exs",
     "about_anonymous_functions.exs",
     "about_named_functions.exs",
-    "about_match_variables.exs",
+    "about_matching.exs",
   ]
 
 

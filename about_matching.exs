@@ -1,4 +1,4 @@
-defmodule AboutMatchesVariables do
+defmodule AboutMatching do
   use Koans
 
   think "It's like affecting a variable" do
