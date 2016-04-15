@@ -85,9 +85,11 @@ defmodule Koans do
       tag = Module.get_attribute(__MODULE__, :tag)
       Module.put_attribute(__MODULE__, :tag, nil)
 
-      Module.put_attribute(__MODULE__, :meditation, unquote(message))
-      Koans.add({__MODULE__, unquote(name), tag})
-      def unquote(name)(), do: unquote(lesson)
+      unless tag == :skip do
+        Module.put_attribute(__MODULE__, :meditation, unquote(message))
+        Koans.add({__MODULE__, unquote(name), tag})
+        def unquote(name)(), do: unquote(lesson)
+      end
     end
   end
 
