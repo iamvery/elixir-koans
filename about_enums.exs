@@ -53,17 +53,17 @@ defmodule AboutEnums do
     assert Enum.at(list, 5, :something) == __?
   end
 
-  think "Enum.fetch/2 is similar to Enum.at/2" do
+  think "Fetching is similar to at" do
     list = [:a, :b, :c]
     assert Enum.fetch(list, 0) == __?
   end
 
-  think "Enum.fetch/2 tells you if it can't find an element" do
+  think "Fetching tells you if it can't find an element" do
     list = [:a, :b, :c]
     assert Enum.fetch(list, 4) == __?
   end
 
-  think "Enum.fetch!/2 will raise an exception if it can't find an element" do
+  think "Fetching will raise an exception if it can't find an element" do
     list = [:a, :b, :c]
     assert_raise __?, fn -> Enum.fetch!(list, 4) end
   end
