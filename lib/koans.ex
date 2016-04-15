@@ -52,7 +52,10 @@ defmodule Koans do
   end
 
   def run do
-    koans |> Enum.reverse |> Enum.each(&exec/1)
+    koans
+    # TODO lazy iteration
+    |> Enum.reverse
+    |> Enum.each(&exec/1)
   end
 
   defp exec({module, koan}) do
