@@ -13,6 +13,7 @@ defmodule Koans do
     "about_asserts.exs",
     "about_numbers_and_booleans.exs",
     "about_strings.exs",
+    "about_atoms.exs",
     "about_lists.exs",
     "about_matching.exs",
     "about_enums.exs",

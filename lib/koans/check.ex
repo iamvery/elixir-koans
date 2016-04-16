@@ -7,4 +7,7 @@ defmodule Koans.Check do
 
   def tuple?(v) when is_tuple(v), do: true
   def tuple?(_), do: false
+
+  def atom?(v) when is_atom(v), do: true
+  def atom?(_), do: false
 end
