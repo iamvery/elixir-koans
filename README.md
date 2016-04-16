@@ -54,14 +54,16 @@ For your convenience, some annotations are available for examples.
 
   ```elixir
   @tag :skip
-  think "This example will not run"
+  think "This example will not run" do
+    # ...
   ```
 
 * Focusing on examples
 
   ```elixir
   @tag :focus
-  think "Only examples tagged with focus will run"
+  think "Only examples tagged with focus will run" do
+    # ...
   ```
 
 Inspiration
