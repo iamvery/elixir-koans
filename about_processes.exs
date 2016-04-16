@@ -38,4 +38,28 @@ defmodule AboutProcesses do
       value -> assert value == __?
     end
   end
+
+  def echo_loop do
+    receive do
+      {caller, value} ->
+        send caller, value
+        echo_loop
+    end
+  end
+
+  think "Use tail recursion to receive multiple messages" do
+    pid = spawn &echo_loop/0
+
+    send pid, {self, "o"}
+    receive do
+      value -> assert value == __?
+    end
+
+    send pid, {self, "hai"}
+    receive do
+      value -> assert value == __?
+    end
+
+    Process.exit(pid, :kill)
+  end
 end
