@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [v2]
+
 ### Added
 - Example of referencing a named function (https://github.com/iamvery/elixir-koans/pull/16)
 - Lesson about processes (https://github.com/iamvery/elixir-koans/pull/16)
@@ -22,5 +24,6 @@ All notable changes to this project will be documented in this file.
 - Lessons ported from https://github.com/dojo-toulouse/elixir-koans
 - Improved koans runner
 
-[Unreleased]: https://github.com/iamvery/elixir-koans/compare/v1...HEAD
+[Unreleased]: https://github.com/iamvery/elixir-koans/compare/v2...HEAD
+[v2]: https://github.com/iamvery/elixir-koans/compare/v1...v2
 [v1]: https://github.com/iamvery/elixir-koans/compare/affa90...v1
