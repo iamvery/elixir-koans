@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+- Lesson about atoms (https://github.com/iamvery/elixir-koans/pull/26)
+
 ## [v2]
 
 ### Added
