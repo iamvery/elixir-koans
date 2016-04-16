@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Example of referencing a named function (https://github.com/iamvery/elixir-koans/pull/16)
+- Lesson about processes (https://github.com/iamvery/elixir-koans/pull/16)
 - Examples may now be skipped by adding `@tag :skip` before them. (https://github.com/iamvery/elixir-koans/pull/13)
 - Examples may now be focused on by adding `@tag :focus` before them. (https://github.com/iamvery/elixir-koans/pull/13)
 

@@ -17,6 +17,12 @@ defmodule AboutNamedFunctions do
     assert hello("world", "France!") == __?
   end
 
+  think "You can reference a named function with &" do
+    upcase = &String.upcase/1
+
+    assert upcase.("orly") == __?
+  end
+
   def factorial(0) do 1 end
   def factorial(n) do n * factorial(n-1) end
 
