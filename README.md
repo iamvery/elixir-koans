@@ -46,6 +46,24 @@ The koans are run via [Mix], Elixir's task runner.
 
    Note: Currently the koans generate a lot of warnings. These can probably be ignored (https://github.com/iamvery/elixir-koans/issues/4).
 
+### Annotations
+
+For your convenience, some annotations are available for examples.
+
+* Skipping examples
+
+  ```elixir
+  @tag :skip
+  think "This example will not run"
+  ```
+
+* Focusing on examples
+
+  ```elixir
+  @tag :focus
+  think "Only examples tagged with focus will run"
+  ```
+
 Inspiration
 -----------
 
