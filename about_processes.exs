@@ -9,7 +9,7 @@ defmodule AboutProcesses do
   think "Spawning a process returns a process ID (PID)" do
     pid = spawn fn -> IO.puts "I am running in another process" end
 
-    assert_? is_pid(pid)
+    assert __? == is_pid(pid)
   end
 
   think "You are a process" do
