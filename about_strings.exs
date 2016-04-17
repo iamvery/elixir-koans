@@ -6,6 +6,11 @@ defmodule AboutStrings do
     assert a_string == __?
   end
 
+  think "Strings can be interpolated" do
+    a_string = "1 + 1 = #{1+1}"
+    assert a_string == __?
+  end
+
   think "How long is a piece of string?" do
     a_string = "Hello there"
     assert String.length(a_string) == __?
