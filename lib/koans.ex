@@ -16,6 +16,7 @@ defmodule Koans do
     "about_atoms.exs",
     "about_lists.exs",
     "about_matching.exs",
+    "about_sigils.exs",
     "about_enums.exs",
     "about_tuples.exs",
     "about_maps.exs",
