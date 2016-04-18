@@ -6,7 +6,7 @@ defmodule AboutSigils do
   end
 
   think "Sigils are useful to avoid escaping quotes in strings" do
-    assert "\"Hello, I am a string\" - \"Hey, me too\"" == __?
+    assert "\"Welcome to the jungle\", they said." == __?
   end
 
   think "Sigils can use different delimiters" do
