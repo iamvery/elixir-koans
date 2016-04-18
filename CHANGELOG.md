@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Lesson about atoms (https://github.com/iamvery/elixir-koans/pull/26)
+- Lesson about sigils (https://github.com/iamvery/elixir-koans/pull/27)
 
 ## [v2]
 
