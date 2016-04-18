@@ -20,6 +20,7 @@ defmodule Koans do
     "about_enums.exs",
     "about_tuples.exs",
     "about_maps.exs",
+    "about_lists_and_maps.exs",
     "about_anonymous_functions.exs",
     "about_named_functions.exs",
     "about_processes.exs",
