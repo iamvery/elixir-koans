@@ -66,7 +66,4 @@ defmodule AboutListsAndMaps do
 
     assert list == [do: __?, else: __?]
   end
-
-  # TODO accessing lists is slower than maps, because list must be traversed
-  # to find elements.
 end
