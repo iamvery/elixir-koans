@@ -6,7 +6,7 @@ defmodule AboutStrings do
     assert a_string == __?
   end
 
-  think "Strings can be interpolated" do
+  think "Values can be interpolated into strings" do
     a_string = "1 + 1 = #{1+1}"
     assert a_string == __?
   end
