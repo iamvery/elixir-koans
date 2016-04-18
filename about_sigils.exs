@@ -5,7 +5,7 @@ defmodule AboutSigils do
     assert_? "This is a string" == ~s{This is a string}
   end
 
-  think "Sigils can come in handy" do
+  think "Sigils are useful to avoid escaping quotes in strings" do
     assert "\"Hello, I am a string\" - \"Hey, me too\"" == __?
   end
 
