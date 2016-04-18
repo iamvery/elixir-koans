@@ -23,12 +23,11 @@ defmodule AboutSigils do
   end
 
   think "~w allows for interpolation" do
-    assert ~w(Hello 1#{1+1}3) == __?
+    assert ~w(Hello 1#{1+1}3) == [__?, __?]
   end
 
   think "~W behaves to ~w as ~S behaves to ~s" do
-    assert_? ~W(Hello #{100+20+3}) == ~w(Hello #{100+20+3})
-    assert __? == ~w(Hello \#\{100+20+3\})
+    assert ~W(Hello #{100+20+3}) == ["Hello", __?]
   end
 end
 
