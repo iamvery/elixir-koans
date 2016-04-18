@@ -15,6 +15,15 @@ defmodule AboutAtoms do
     assert __? == list[:name]
   end
 
+  think "Atom keys enable a different access syntax" do
+    map = %{name: "Jay"}
+    assert map.name == __?
+
+    map = %{"name" => "Jay"}
+    attempt = fn -> __? end
+    assert_raise KeyError, "key :name not found in: %{\"name\" => \"Jay\"}", attempt
+  end
+
   think "It is surprising to find out that booleans are atoms" do
     assert_? Koans.Check.atom?(true)
     assert_? Koans.Check.atom?(false)
