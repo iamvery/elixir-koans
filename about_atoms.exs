@@ -24,8 +24,8 @@ defmodule AboutAtoms do
     assert map.name == __?
 
     map = %{"name" => "Jay"}
-    assert map["name"] == __?
     assert_raise KeyError, fn -> __? end
+    assert map["name"] == __?
   end
 
   think "Dot syntax is stricter than access with brackets" do
