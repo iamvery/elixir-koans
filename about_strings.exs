@@ -127,11 +127,6 @@ defmodule AboutStrings do
     assert String.rjust(a_string, 3, ?0) == __?
   end
 
-  think "Converting to an atom" do
-    a_string = "atomized"
-    assert String.to_atom(a_string) == __?
-  end
-
   think "Converting to an integer" do
     assert String.to_integer("10") == 10
     assert_raise ArgumentError, fn -> String.to_integer(__?) end

@@ -7,6 +7,11 @@ defmodule AboutAtoms do
     assert __? == adam
   end
 
+  think "Strings can be converted to atoms" do
+    a_string = "atomized"
+    assert String.to_atom(a_string) == __?
+  end
+
   think "Atoms are often used as keys, because they're faster than strings" do
     map = %{name: "Jay"}
     list = [name: "Jay"]
