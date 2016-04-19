@@ -52,7 +52,7 @@ defmodule AboutTuples do
     assert tuple_size(quoted_block) == __?
   end
 
-  think "We can use tuples to define blocks" do
+  think "We can use tuples to define blocks of Elixir code" do
     # Note: unquote is the reverse of quote
     # It gives a block from its representation
     unquoted_block = unquote {:"{}", [], [1, 2, 3]}
