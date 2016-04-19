@@ -32,14 +32,14 @@ defmodule AboutAtoms do
   end
 
   think "It is surprising to find out that booleans are atoms" do
-    assert_? Koans.Check.atom?(true)
-    assert_? Koans.Check.atom?(false)
+    assert_? is_atom(true)
+    assert_? is_atom(false)
     assert __? == :true
     assert __? == :false
   end
 
   think "Modules are also atoms" do
-    assert_? Koans.Check.atom?(String)
+    assert_? is_atom(String)
     assert __? == :"Elixir.String"
     assert __? == :"Elixir.String".upcase("hello")
   end
