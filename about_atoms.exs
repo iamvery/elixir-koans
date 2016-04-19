@@ -6,9 +6,9 @@ defmodule AboutAtoms do
     assert __? == adam
   end
 
-  think "Strings can be converted to atoms" do
-    a_string = "atomized"
-    assert String.to_atom(a_string) == __?
+  think "Strings can be converted to atoms, and vice versa" do
+    assert String.to_atom("atomized") == __?
+    assert Atom.to_string(:stringified) == __?
   end
 
   think "Atoms are often used as keys, because they're faster than strings" do
