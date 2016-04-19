@@ -20,17 +20,15 @@ defmodule AboutAtoms do
     assert map.name == __?
 
     map = %{"name" => "Jay"}
-    attempt = fn -> __? end
-    assert_raise KeyError, "key :name not found in: %{\"name\" => \"Jay\"}", attempt
+    assert map["name"] == __?
+    assert_raise KeyError, fn -> __? end
   end
 
   think "Dot syntax is stricter than access with brackets" do
     map = %{name: "Jay"}
-    bracket_access = fn -> map[:age] end
-    dot_access     = fn -> map.age end
 
-    assert bracket_access.() == __?
-    assert_raise __?, "key :age not found in: %{name: \"Jay\"}", dot_access
+    assert map[:age] == __?
+    assert_raise KeyError, fn -> __? end
   end
 
   think "It is surprising to find out that booleans are atoms" do
