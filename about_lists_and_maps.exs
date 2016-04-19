@@ -13,6 +13,13 @@ defmodule AboutListsAndMaps do
     assert kw_list[:foo] == __?
   end
 
+  think "You could access a second key by removing the first" do
+    kw_list = [foo: "bar", foo: "baz"]
+    [_|kw_list] = kw_list
+
+    assert kw_list[:foo] == __?
+  end
+
   think "Keyword lists just special syntax for lists of two-element tuples" do
     assert [foo: "bar"] == [{__?, __?}]
   end
