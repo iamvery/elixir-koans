@@ -57,8 +57,9 @@ defmodule AboutBinaries do
   end
 
   # These would be be simple, but misleading; actually characters whose
-  # codepoint is > 128 require more than 1 byte, because the first bit in UTF8
-  # is metadata
+  # codepoint is > 128 require more than 1 byte, because UTF8 always uses at
+  # least 1 bit of metadata per byte (a leading 0 in the case of "a", to say
+  # "this byte is not part of a sequence; it encodes the whole codepoint")
   #
   # @tag :focus
   # think "Characters whose codepoint is <= 255 use 1 byte" do
