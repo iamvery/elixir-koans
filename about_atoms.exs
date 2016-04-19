@@ -3,7 +3,7 @@ defmodule AboutAtoms do
 
   think "Atoms are sort of like strings" do
     adam = :human
-    assert __? == adam
+    assert adam == __?
   end
 
   think "Strings can be converted to atoms, and vice versa" do
@@ -15,8 +15,8 @@ defmodule AboutAtoms do
     map = %{name: "Jay"}
     list = [name: "Jay"]
 
-    assert __? == map[:name]
-    assert __? == list[:name]
+    assert map[:name] == __?
+    assert list[:name] == __?
   end
 
   think "Only atom keys may be accessed with dot syntax" do
@@ -38,18 +38,18 @@ defmodule AboutAtoms do
   think "It is surprising to find out that booleans are atoms" do
     assert_? is_atom(true)
     assert_? is_atom(false)
-    assert __? == :true
-    assert __? == :false
+    assert :true == __?
+    assert :false == __?
   end
 
   think "Modules are also atoms" do
     assert_? is_atom(String)
-    assert __? == :"Elixir.String"
-    assert __? == :"Elixir.String".upcase("hello")
+    assert :"Elixir.String" == __?
+    assert :"Elixir.String".upcase("hello") == __?
   end
 
   think "Atoms are used to access Erlang" do
     assert_? :erlang.is_list([])
-    assert __? == :lists.sort([2, 3, 1])
+    assert :lists.sort([2, 3, 1]) == __?
   end
 end
