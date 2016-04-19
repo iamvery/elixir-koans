@@ -30,7 +30,7 @@ defmodule AboutSigils do
   end
 
   think "~W behaves to ~w as ~S behaves to ~s" do
-    assert ~W(Hello #{100+20+3}) == ["Hello", __?]
+    assert ~W(Hello #{1+1}) == ["Hello", __?]
   end
 end
 
