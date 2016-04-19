@@ -2,7 +2,7 @@ defmodule AboutSigils do
   use Koans
 
   think "The ~s sigil is a different way of expressing string literals" do
-    assert_? "This is a string" == ~s{This is a string}
+    assert ~s{This is a string} == __?
   end
 
   think "Sigils are useful to avoid escaping quotes in strings" do
