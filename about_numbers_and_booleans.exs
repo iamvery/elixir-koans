@@ -44,11 +44,6 @@ defmodule AboutNumbersAndBooleans do
     assert_? is_boolean(0)
   end
 
-  think "Booleans are atoms" do
-    assert_? is_atom(true)
-    assert :true == __?
-  end
-
   think "Boolean OR returns left side if true, otherwise right side" do
     assert_? true or true
     assert_? true or false
