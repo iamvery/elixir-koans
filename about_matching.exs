@@ -1,7 +1,7 @@
 defmodule AboutMatching do
   use Koans
 
-  think "The match operator binds values on the right to variables on the left" do
+  think "The match operator (=) binds values on the right to variables on the left" do
     a_variable = 1
     assert a_variable == __?
   end
