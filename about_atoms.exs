@@ -3,7 +3,6 @@ defmodule AboutAtoms do
 
   think "Atoms are sort of like strings" do
     adam = :human
-
     assert __? == adam
   end
 
