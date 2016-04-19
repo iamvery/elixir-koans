@@ -15,7 +15,7 @@ defmodule AboutAtoms do
     assert __? == list[:name]
   end
 
-  think "Atom keys may be accessed with dot syntax" do
+  think "Only atom keys may be accessed with dot syntax" do
     map = %{name: "Jay"}
     assert map.name == __?
 
