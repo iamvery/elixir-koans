@@ -25,7 +25,7 @@ defmodule AboutSigils do
     assert ~w(Hello world) == [__?, __?]
   end
 
-  think "~w allows for interpolation" do
+  think "~w also allows interpolation" do
     assert ~w(Hello 1#{1+1}3) == [__?, __?]
   end
 
