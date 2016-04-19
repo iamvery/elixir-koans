@@ -33,6 +33,20 @@ defmodule AboutMatching do
     assert_raise MatchError, fn -> [a , a] = [1 , __?] end
   end
 
+  think "Matched values overwrite variable values" do
+    a = 1
+    assert a == __?
+
+    [a, _] = [2, 3]
+    assert a == __?
+  end
+
+  think "Values can be pinned to prevent them from being overwritten" do
+    a = 1
+    assert_raise MatchError, fn -> ^a = __? end
+    assert_raise MatchError, fn -> [^a, _] = __? end
+  end
+
   think "Matching a list inside a list" do
     [a] = [["Hello", "World !"]]
 
