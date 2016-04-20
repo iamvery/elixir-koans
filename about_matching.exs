@@ -45,6 +45,8 @@ defmodule AboutMatching do
     a = 1
     assert_raise MatchError, fn -> ^a = __? end
     assert_raise MatchError, fn -> [^a, _] = __? end
+    # Note: This is a way of asserting what the right-hand side of the match
+    # meets your expectation. Similar to the literal: {:ok, result} = some_func
   end
 
   think "Matching a list inside a list" do
