@@ -68,6 +68,7 @@ defmodule Koans do
     |> focus
     |> Enum.reverse
     |> Enum.each(&exec/1)
+    congratulate
   end
 
   defp focus(koans) do
@@ -136,4 +137,10 @@ defmodule Koans do
       meditate @meditation <> "#{IO.ANSI.format([:red, " (replace with an assertion)"])}"
     end
   end
+
+  defp congratulate do
+    IO.ANSI.format([:green, "\n** You have learned much. You must find your own path now. **"])
+    |> IO.puts
+  end
+
 end
