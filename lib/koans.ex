@@ -1,8 +1,14 @@
 defmodule Koans.MeditateWarning do
   defexception [:message]
   def message(exception) do
-    # TODO include offending line of code in output
-    formatted_message = IO.ANSI.format([:magenta, :bright, "Please meditate: ", :blue, exception.message])
+    location = System.stacktrace |> Enum.at(1) |> elem(3)
+    formatted_message = IO.ANSI.format(
+    [
+      :magenta, :bright, "Please meditate: ",
+      :blue, :normal, exception.message,
+      :yellow, " (#{location[:file]}:#{location[:line]})"
+    ]
+    )
     "#{formatted_message}"
   end
 end
@@ -62,6 +68,7 @@ defmodule Koans do
     |> focus
     |> Enum.reverse
     |> Enum.each(&exec/1)
+    congratulate
   end
 
   defp focus(koans) do
@@ -130,4 +137,10 @@ defmodule Koans do
       meditate @meditation <> "#{IO.ANSI.format([:red, " (replace with an assertion)"])}"
     end
   end
+
+  defp congratulate do
+    IO.ANSI.format([:green, "\n** You have learned much. You must find your own path now. **"])
+    |> IO.puts
+  end
+
 end
