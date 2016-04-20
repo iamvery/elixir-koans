@@ -32,22 +32,24 @@ defmodule AboutBinaries do
     assert contatenated == __?
   end
 
-  @tag :focus
-  think "Numbers can be represented as bits" do
-    bit_representation = fn (integer) -> Integer.to_string(integer, 2) end
-    assert bit_representation.(1) == "1"
-    assert bit_representation.(2) == "10"
-    assert bit_representation.(3) == "11"
-    assert bit_representation.(4) == "100"
+  def bit_representation(integer) do
+    Integer.to_string(integer, 2) # base 2, AKA "binary"
   end
 
   @tag :focus
-  think "255 is the max value we can represent with 8 bits (1 byte)" do
-    bit_representation = fn (integer) -> Integer.to_string(integer, 2) end
-    assert bit_representation.(255) == "11111111"
-    assert String.length(bit_representation.(255)) == 8
-    assert bit_representation.(256) == "100000000"
-    assert String.length(bit_representation.(256)) == 9
+  think "Numbers can be represented in base 2 (binary) as a sequence of bits" do
+    assert bit_representation(1) == "1"
+    assert bit_representation(2) == "10"
+    assert bit_representation(3) == "11"
+    assert bit_representation(4) == "100"
+  end
+
+  @tag :focus
+  think "255 is the biggest value we can represent with 8 bits (1 byte)" do
+    assert bit_representation(255) == "11111111"
+    assert String.length(bit_representation(255)) == 8
+    assert bit_representation(256) == "100000000"
+    assert String.length(bit_representation(256)) == 9
   end
 
   @tag :focus
@@ -56,29 +58,8 @@ defmodule AboutBinaries do
     assert ?™ == 8482
   end
 
-  # These would be be simple, but misleading; actually characters whose
-  # codepoint is > 128 require more than 1 byte, because UTF8 always uses at
-  # least 1 bit of metadata per byte (a leading 0 in the case of "a", to say
-  # "this byte is not part of a sequence; it encodes the whole codepoint")
-  #
-  # @tag :focus
-  # think "Characters whose codepoint is <= 255 use 1 byte" do
-  #   assert ?a == 97
-  #   assert String.length("a") == 1
-  #   assert byte_size("a") == 1
-  #   assert "a" === <<97>>
-  # end
-  #
-  # @tag :focus
-  # think "Characters whose codepoint is > 255 require more than 1 byte" do
-  #   assert ?λ == 955
-  #   assert String.length("λ") == 1
-  #   assert byte_size("λ") == 2
-  #   assert "λ" === <<206, 187>>
-  # end
-
   @tag :focus
-  think "Therefore, most Unicode codepoints require more than 1 byte to represent" do
+  think "Therefore, most Unicode codepoints must be encoded using more than 1 byte" do
     assert ?λ == 955
     assert String.length("λ") == 1
     assert byte_size("λ") == 2
@@ -86,10 +67,9 @@ defmodule AboutBinaries do
   end
 
   @tag :focus
-  think "The bytes representing a codepoint are UTF8 encoded" do
-    bit_representation = fn (integer) -> Integer.to_string(integer, 2) end
+  think "The bytes representing a codepoint are UTF8-encoded" do
     assert "λ" === <<206, 187>>
-    utf8_encoding = [206, 187] |> Enum.map(bit_representation)
+    utf8_encoding = [206, 187] |> Enum.map(&bit_representation/1)
     assert utf8_encoding == ["11001110", "10111011"]
     # See https://en.wikipedia.org/wiki/UTF-8#Description for details
   end
