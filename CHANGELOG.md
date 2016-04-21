@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file.
 - Lesson about atoms (https://github.com/iamvery/elixir-koans/pull/26)
 - Lesson about sigils (https://github.com/iamvery/elixir-koans/pull/27)
 - Lesson about lists and maps (https://github.com/iamvery/elixir-koans/pull/25)
+- Lesson about regular expressions (https://github.com/iamvery/elixir-koans/pull/32)
 
 ## [v2]
 

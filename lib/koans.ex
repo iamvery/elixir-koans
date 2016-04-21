@@ -23,6 +23,7 @@ defmodule Koans do
     "about_lists.exs",
     "about_matching.exs",
     "about_sigils.exs",
+    "about_regular_expressions.exs",
     "about_enums.exs",
     "about_tuples.exs",
     "about_maps.exs",
