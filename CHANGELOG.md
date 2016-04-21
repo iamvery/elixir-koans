@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Changed
+- Prettier user feedback when running koans (https://github.com/iamvery/elixir-koans/pull/37)
 - Various house cleanings (https://github.com/iamvery/elixir-koans/pull/36)
 
 ### Added
