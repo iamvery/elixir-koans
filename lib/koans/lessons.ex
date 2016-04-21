@@ -18,7 +18,6 @@ defmodule Koans.Lessons do
   ]
 
   def load do
-    Koans.Examples.start_link
     @lessons |> Enum.each(&Code.load_file/1)
   end
 end

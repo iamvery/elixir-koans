@@ -5,6 +5,7 @@ defmodule Koans do
     import Supervisor.Spec, warn: false
 
     children = [
+      worker(Koans.Examples, []),
     ]
 
     opts = [strategy: :one_for_one, name: Koans.Supervisor]
