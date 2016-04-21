@@ -1,6 +1,6 @@
-defmodule KoansTest do
+defmodule KoansDSLTest do
+  require Koans.DSL
   use ExUnit.Case
-  use Koans
 
   @meditation "testing"
 
