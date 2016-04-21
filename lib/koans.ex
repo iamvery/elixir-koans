@@ -24,6 +24,10 @@ defmodule Koans do
     end
   end
 
+  def meditate(subject) do
+    raise Koans.MeditateWarning, message: subject
+  end
+
   def load do
     Koans.Examples.start_link
     @lessons |> Enum.each(&Code.load_file/1)
@@ -77,10 +81,6 @@ defmodule Koans do
   defp success(module, koan) do
     IO.ANSI.format([:green, "✓ #{module}: #{koan}"])
     |> IO.puts
-  end
-
-  def meditate(subject) do
-    raise Koans.MeditateWarning, message: subject
   end
 
   defp congratulate do
