@@ -7,6 +7,6 @@ defmodule Mix.Tasks.Learn do
 
   def run(_) do
     System.at_exit(fn 0 -> Koans.run end)
-    Koans.load
+    Koans.Lessons.load
   end
 end
