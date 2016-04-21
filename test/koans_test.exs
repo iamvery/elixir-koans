@@ -6,13 +6,13 @@ defmodule KoansTest do
 
   test "__?" do
     assert_raise Koans.MeditateWarning, fn ->
-      Koans.__?
+      Koans.DSL.__?
     end
   end
 
   test "assert_?" do
     assert_raise Koans.MeditateWarning, fn ->
-      Koans.assert_?
+      Koans.DSL.assert_?
     end
   end
 end

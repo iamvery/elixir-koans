@@ -21,7 +21,7 @@ defmodule Koans do
   defmacro __using__([]) do
     quote do
       import ExUnit.Assertions
-      import Koans, only: [think: 2, __?: 0, assert_?: 1]
+      import Koans.DSL, only: [think: 2, __?: 0, assert_?: 1]
     end
   end
 
@@ -75,20 +75,6 @@ defmodule Koans do
     success(module, koan)
   end
 
-  defmacro think(message, lesson) do
-    name = :"#{message}"
-    quote do
-      tag = Module.get_attribute(__MODULE__, :tag)
-      Module.put_attribute(__MODULE__, :tag, nil)
-
-      unless tag == :skip do
-        Module.put_attribute(__MODULE__, :meditation, unquote(message))
-        Koans.add({__MODULE__, unquote(name), tag})
-        def unquote(name)(), unquote(lesson)
-      end
-    end
-  end
-
   defp stop_to_learn(error, meditation, case) do
     failure(case, meditation)
     Koans.Formatter.failure_message(error, meditation, case)
@@ -108,18 +94,6 @@ defmodule Koans do
 
   def meditate(subject) do
     raise Koans.MeditateWarning, message: subject
-  end
-
-  defmacro __? do
-    quote do
-      Koans.meditate @meditation
-    end
-  end
-
-  defmacro assert_?(_ \\ nil) do
-    quote do
-      Koans.meditate @meditation <> "#{IO.ANSI.format([:red, " (replace with an assertion)"])}"
-    end
   end
 
   defp congratulate do
