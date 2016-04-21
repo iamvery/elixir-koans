@@ -19,10 +19,10 @@ defmodule AboutAsserts do
   end
 
   think "To understand reality, we must compare our expectations against reality." do
-    expected_value = __?
     actual_value = 1 + 1
+    expected_value = __?
 
-    assert expected_value == actual_value
+    assert actual_value == expected_value
   end
 
   think "Assertions are smart" do

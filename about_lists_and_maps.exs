@@ -34,7 +34,7 @@ defmodule AboutListsAndMaps do
     list = [1, 2, 3]
     [a, _, c] = list
 
-    assert __? == a and __? == c
+    assert a == __? and c == __?
     assert_raise MatchError, fn -> __? = list end
   end
 
