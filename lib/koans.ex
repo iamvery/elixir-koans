@@ -1,5 +1,4 @@
 defmodule Koans do
-  @name __MODULE__
   @lessons [
     "about_asserts.exs",
     "about_numbers_and_booleans.exs",
@@ -26,7 +25,7 @@ defmodule Koans do
   end
 
   def load do
-    start_link
+    Koans.Examples.start_link
     @lessons |> Enum.each(&Code.load_file/1)
   end
 
@@ -34,20 +33,8 @@ defmodule Koans do
     System.at_exit(fn 0 -> run end)
   end
 
-  defp start_link do
-    Agent.start_link(fn -> [] end, name: @name)
-  end
-
-  def add(koan) do
-    Agent.update(@name, fn koans -> [koan|koans] end)
-  end
-
-  defp koans do
-    Agent.get(@name, fn koans -> koans end)
-  end
-
   def run do
-    koans
+    Koans.Examples.all
     # TODO lazy iteration
     |> focus
     |> Enum.reverse
