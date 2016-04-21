@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Lesson about binaries (https://github.com/iamvery/elixir-koans/pull/33)
 - Examples about dot access (https://github.com/iamvery/elixir-koans/pull/30/)
 - Lesson about atoms (https://github.com/iamvery/elixir-koans/pull/26)
 - Lesson about sigils (https://github.com/iamvery/elixir-koans/pull/27)
