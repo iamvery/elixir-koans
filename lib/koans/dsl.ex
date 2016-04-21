@@ -19,7 +19,7 @@ defmodule Koans.DSL do
     end
   end
 
-  defmacro assert_?(_ \\ nil) do
+  defmacro assert_?(_) do
     quote do
       Koans.meditate @meditation <> "#{IO.ANSI.format([:red, " (replace with an assertion)"])}"
     end

@@ -12,7 +12,7 @@ defmodule KoansDSLTest do
 
   test "assert_?" do
     assert_raise Koans.MeditateWarning, fn ->
-      Koans.DSL.assert_?
+      Koans.DSL.assert_? _
     end
   end
 end
