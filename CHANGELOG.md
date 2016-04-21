@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Changed
+- Actual value on left, expected on right (https://github.com/iamvery/elixir-koans/pull/14)
 - Prettier user feedback when running koans (https://github.com/iamvery/elixir-koans/pull/37)
 - Various house cleanings (https://github.com/iamvery/elixir-koans/pull/36)
 
