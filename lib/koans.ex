@@ -21,7 +21,7 @@ defmodule Koans do
   defmacro __using__([]) do
     quote do
       import ExUnit.Assertions
-      import Koans, only: [think: 2, meditate: 1, __?: 0, assert_?: 1]
+      import Koans, only: [think: 2, __?: 0, assert_?: 1]
     end
   end
 
@@ -112,13 +112,13 @@ defmodule Koans do
 
   defmacro __? do
     quote do
-      meditate @meditation
+      Koans.meditate @meditation
     end
   end
 
   defmacro assert_?(_ \\ nil) do
     quote do
-      meditate @meditation <> "#{IO.ANSI.format([:red, " (replace with an assertion)"])}"
+      Koans.meditate @meditation <> "#{IO.ANSI.format([:red, " (replace with an assertion)"])}"
     end
   end
 
