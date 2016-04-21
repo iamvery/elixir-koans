@@ -33,10 +33,6 @@ defmodule Koans do
     @lessons |> Enum.each(&Code.load_file/1)
   end
 
-  def start do
-    System.at_exit(fn 0 -> run end)
-  end
-
   def run do
     Koans.Examples.all
     # TODO lazy iteration
