@@ -9,4 +9,18 @@ defmodule KoansAnswererTest do
 
     assert with_value == quote(do: :lol)
   end
+
+  test "multiple values injected" do
+    values_are_missing = quote do
+      assert __?
+      refute __?
+    end
+    {with_values, []} = inject(values_are_missing, [true, false])
+    expected = quote do
+      assert true
+      refute false
+    end
+
+    assert with_values == expected
+  end
 end
