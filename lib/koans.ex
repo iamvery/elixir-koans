@@ -18,7 +18,6 @@ defmodule Koans do
     "about_processes.exs",
   ]
 
-
   defmacro __using__([]) do
     quote do
       import ExUnit.Assertions
@@ -127,5 +126,4 @@ defmodule Koans do
     IO.ANSI.format([:green, "\n** You have learned much. You must find your own path now. **"])
     |> IO.puts
   end
-
 end
