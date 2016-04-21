@@ -7,8 +7,15 @@ defmodule AboutListsAndMaps do
     assert kw_list[:foo] == __?
   end
 
-  think "Keys may be repeated, but the first is accessed" do
+  think "Keys may be repeated, but only the first is accessed" do
     kw_list = [foo: "bar", foo: "baz"]
+
+    assert kw_list[:foo] == __?
+  end
+
+  think "You could access a second key by removing the first" do
+    kw_list = [foo: "bar", foo: "baz"]
+    [_|kw_list] = kw_list
 
     assert kw_list[:foo] == __?
   end

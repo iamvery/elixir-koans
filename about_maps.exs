@@ -7,7 +7,7 @@ defmodule AboutMaps do
     assert map[:likes] == __?
   end
 
-  think "Keys can be any value" do
+  think "Any value can be used as a key" do
     map = %{"name" => "Ryan", {:ok} => true}
     assert map["name"] == __?
     assert map[{:ok}] == __?

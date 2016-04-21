@@ -19,7 +19,7 @@ defmodule AboutLists do
     assert [1, 2, 3] -- [2] == __?
   end
 
-  think "Only the first element is removed with truncate operator" do
+  think "Only the occurrence is removed with truncate operator" do
     assert [:foo, :bar, :foo] -- [:foo] == __?
   end
 
@@ -27,7 +27,7 @@ defmodule AboutLists do
     assert_? [:foo, :bar] -- [:baz] == [:foo, :bar]
   end
 
-  think "The in operator tests if element is present in a list" do
+  think "The in operator tests if an element is present in a list" do
     assert_? :bar in [:foo, :bar]
   end
 end

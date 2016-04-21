@@ -3,8 +3,12 @@ defmodule AboutAtoms do
 
   think "Atoms are sort of like strings" do
     adam = :human
-
     assert __? == adam
+  end
+
+  think "Strings can be converted to atoms, and vice versa" do
+    assert String.to_atom("atomized") == __?
+    assert Atom.to_string(:stringified) == __?
   end
 
   think "Atoms are often used as keys, because they're faster than strings" do
@@ -20,8 +24,8 @@ defmodule AboutAtoms do
     assert map.name == __?
 
     map = %{"name" => "Jay"}
-    assert map["name"] == __?
     assert_raise KeyError, fn -> __? end
+    assert map["name"] == __?
   end
 
   think "Dot syntax is stricter than access with brackets" do
@@ -32,14 +36,14 @@ defmodule AboutAtoms do
   end
 
   think "It is surprising to find out that booleans are atoms" do
-    assert_? Koans.Check.atom?(true)
-    assert_? Koans.Check.atom?(false)
+    assert_? is_atom(true)
+    assert_? is_atom(false)
     assert __? == :true
     assert __? == :false
   end
 
   think "Modules are also atoms" do
-    assert_? Koans.Check.atom?(String)
+    assert_? is_atom(String)
     assert __? == :"Elixir.String"
     assert __? == :"Elixir.String".upcase("hello")
   end

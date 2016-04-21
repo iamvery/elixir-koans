@@ -4,10 +4,4 @@ defmodule Koans.Check do
 
   def integer?(n) when is_integer(n), do: true
   def integer?(_), do: false
-
-  def tuple?(v) when is_tuple(v), do: true
-  def tuple?(_), do: false
-
-  def atom?(v) when is_atom(v), do: true
-  def atom?(_), do: false
 end
