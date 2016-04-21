@@ -3,7 +3,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+- Various house cleanings (https://github.com/iamvery/elixir-koans/pull/36)
+
 ### Added
+- Example of variable pinning in match (https://github.com/iamvery/elixir-koans/pull/36)
+- Example of accessing second key with the same name in keyword list (https://github.com/iamvery/elixir-koans/pull/36)
 - Lesson about binaries (https://github.com/iamvery/elixir-koans/pull/33)
 - Examples about dot access (https://github.com/iamvery/elixir-koans/pull/30/)
 - Lesson about atoms (https://github.com/iamvery/elixir-koans/pull/26)
