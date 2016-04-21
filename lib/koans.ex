@@ -6,6 +6,7 @@ defmodule Koans do
 
     children = [
       worker(Koans.Examples, []),
+      worker(Koans.Answers, []),
     ]
 
     opts = [strategy: :one_for_one, name: Koans.Supervisor]
