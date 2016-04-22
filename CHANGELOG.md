@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 - Various house cleanings (https://github.com/iamvery/elixir-koans/pull/36)
 
 ### Added
+- Dynamically inject answers when tests run to validate all lessons. I can't believe it worked! (https://github.com/iamvery/elixir-koans/pull/21)
 - Example of variable pinning in match (https://github.com/iamvery/elixir-koans/pull/36)
 - Example of accessing second key with the same name in keyword list (https://github.com/iamvery/elixir-koans/pull/36)
 - Lesson about binaries (https://github.com/iamvery/elixir-koans/pull/33)
