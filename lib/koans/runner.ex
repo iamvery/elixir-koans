@@ -46,7 +46,6 @@ defmodule Koans.Runner do
   end
 
   defp congratulate do
-    IO.ANSI.format([:green, "\n** You have learned much. You must find your own path now. **"])
-    |> IO.puts
+    File.read!("congratulations.txt") |> IO.puts
   end
 end
