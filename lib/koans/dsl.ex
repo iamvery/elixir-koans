@@ -13,6 +13,10 @@ defmodule Koans.DSL do
     end
   end
 
+  defmacro answer(lesson, do: answers) do
+    Koans.Answers.add(lesson, answers)
+  end
+
   defmacro __? do
     quote do
       Koans.meditate @meditation
