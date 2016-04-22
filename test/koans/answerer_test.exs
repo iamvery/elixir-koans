@@ -35,4 +35,16 @@ defmodule KoansAnswererTest do
 
     assert quoted == expected
   end
+
+  test "handles missing values in literal tuples" do
+    quoted = quote do
+      {__?, __?}
+    end
+    {with_values, []} = inject(quoted, [:foo, :bar])
+    expected = quote do
+      {:foo, :bar}
+    end
+
+    assert with_values == expected
+  end
 end

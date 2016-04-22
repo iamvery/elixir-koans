@@ -3,10 +3,16 @@ defmodule Koans.Answerer do
     {answer, rest}
   end
 
-  def inject({_, _, args} = quoted, answers) do
+  def inject({_, _, args} = quoted, answers) when is_list(args) do
     {args, answers} = inject(args, answers)
     quoted = put_elem(quoted, 2, args)
     {quoted, answers}
+  end
+
+  def inject(quoted, answers) when is_tuple(quoted) do
+    list = Tuple.to_list(quoted)
+    {list, answers} = Enum.map_reduce list, answers, &inject/2
+    {List.to_tuple(list), answers}
   end
 
   def inject([], answers), do: {[], answers}
