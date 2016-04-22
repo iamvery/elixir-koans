@@ -16,6 +16,7 @@ defmodule AboutBinaries do
     assert concatenated == __?
   end
 
+  @tag :skip
   think "Every character has a unique number (unicode codepoint)" do
     assert_? ?a === 97
     assert_? ?b === 98

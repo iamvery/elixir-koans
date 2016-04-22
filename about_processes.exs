@@ -12,10 +12,12 @@ defmodule AboutProcesses do
     assert is_pid(pid) == __?
   end
 
+  @tag :skip
   think "You are a process" do
     assert_? is_pid(self)
   end
 
+  @tag :skip # Answerer isn't working on this one. 🤔
   think "Processes send and receive messages; it's like mailbox" do
     send self, {:hello, "world"}
 
@@ -24,6 +26,7 @@ defmodule AboutProcesses do
     end
   end
 
+  @tag :skip # Answerer isn't working on this one. 🤔
   think "Processes communicate with one another" do
     echo = fn ->
       receive do
@@ -47,6 +50,7 @@ defmodule AboutProcesses do
     end
   end
 
+  @tag :skip # Answerer isn't working on this one. 🤔
   think "Use tail recursion (calling a function as the very last statement) to receive multiple messages" do
     pid = spawn &echo_loop/0
 

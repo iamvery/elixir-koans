@@ -18,6 +18,7 @@ defmodule AboutEnums do
     assert Enum.concat(list_1, list_2) == __?
   end
 
+  @tag :skip
   think "Is an enumerable empty?" do
     assert_? Enum.empty?([1, 2, 3])
     assert_? Enum.empty?([])
@@ -219,6 +220,7 @@ defmodule AboutEnums do
     assert Enum.reverse(numbers) == __?
   end
 
+  @tag :skip
   think "Shuffle" do
     assert_? Enum.shuffle(numbers) == numbers
     # Note: It's possible for this to fail. Does shuffle guarantee difference?
