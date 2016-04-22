@@ -64,7 +64,6 @@ defmodule AboutNumbersAndBooleans do
     assert_raise ArgumentError, message, fn -> 1 or true end
   end
 
-  @tag :skip
   think "Other binary operators are relaxed about their argument's type" do
     assert __? == 42  || 84
     assert __? == 42  || nil

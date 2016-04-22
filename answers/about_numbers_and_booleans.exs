@@ -38,5 +38,6 @@ defmodule Answers.AboutNumbersAndBooleans do
   end
 
   answer "Other binary operators are relaxed about their argument's type" do
+    [42, 42, 84, nil]
   end
 end
