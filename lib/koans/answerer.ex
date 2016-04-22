@@ -3,6 +3,11 @@ defmodule Koans.Answerer do
     {answer, rest}
   end
 
+  def inject({:assert_?, _, args}, [answer|rest]) do
+    with_assertion = put_elem(answer, 2, args)
+    {with_assertion, rest}
+  end
+
   def inject({_, _, args} = quoted, answers) when is_list(args) do
     {args, answers} = inject(args, answers)
     quoted = put_elem(quoted, 2, args)
