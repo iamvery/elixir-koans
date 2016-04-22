@@ -45,7 +45,25 @@ defmodule Koans.Runner do
     |> IO.puts
   end
 
+  @mountains ~S(
+  ** You have learned much. You must find your own path now. **
+
+                                  _                *       
+                *                ((                        
+                                  `                        
+             ^                                             
+            /*\        ^    *                              
+           /***\      /*\                                  
+          /     \    /* *\             *                   
+         /       \  /     \    ^                           
+        /         \/       \  / \               ^          
+       /          /         \/   \             / \  _      
+      /          /          /     \       _   /   \/ \  X  
+     /          /          /       \  _  / \ /    /   \/ \ 
+---------------------------------------------------------------
+)
+
   defp congratulate do
-    File.read!("congratulations.txt") |> IO.puts
+    IO.puts @mountains
   end
 end
