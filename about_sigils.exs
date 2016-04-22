@@ -9,6 +9,7 @@ defmodule AboutSigils do
     assert "\"Welcome to the jungle\", they said." == __?
   end
 
+  @tag :skip
   think "Sigils can use different delimiters" do
     assert_? ~s{This works!} == ~s[This works!]
   end

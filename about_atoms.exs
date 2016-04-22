@@ -35,6 +35,7 @@ defmodule AboutAtoms do
     assert_raise KeyError, fn -> __? end
   end
 
+  @tag :skip
   think "It is surprising to find out that booleans are atoms" do
     assert_? is_atom(true)
     assert_? is_atom(false)
@@ -42,12 +43,14 @@ defmodule AboutAtoms do
     assert :false == __?
   end
 
+  @tag :skip
   think "Modules are also atoms" do
     assert_? is_atom(String)
     assert :"Elixir.String" == __?
     assert :"Elixir.String".upcase("hello") == __?
   end
 
+  @tag :skip
   think "Atoms are used to access Erlang" do
     assert_? :erlang.is_list([])
     assert :lists.sort([2, 3, 1]) == __?

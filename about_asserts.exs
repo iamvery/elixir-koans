@@ -14,6 +14,7 @@ defmodule AboutAsserts do
     ExUnit.Assertions.refute __?
   end
 
+  @tag :skip
   think "Enlightenment may be more easily achieved with appropriate messages." do
     assert false, "This should be true -- Please fix this"
   end
@@ -36,6 +37,7 @@ defmodule AboutAsserts do
     assert_raise ExUnit.AssertionError, message, is_1_greater_than_2?
   end
 
+  @tag :skip
   think "Some values are truthy; some values are falsy" do
     assert_? 42
     assert_? :foo
