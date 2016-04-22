@@ -22,11 +22,14 @@ defmodule Answers.AboutAtoms do
   end
 
   answer "It is surprising to find out that booleans are atoms" do
+    [assert, assert, true, false]
   end
 
   answer "Modules are also atoms" do
+    [assert, Elixir.String, "HELLO"]
   end
 
   answer "Atoms are used to access Erlang" do
+    [assert, [1,2,3]]
   end
 end

@@ -22,8 +22,10 @@ defmodule Answers.AboutLists do
   end
 
   answer "The truncate operator does nothing when an element is not in the list" do
+    [assert]
   end
 
   answer "The in operator tests if an element is present in a list" do
+    [assert]
   end
 end

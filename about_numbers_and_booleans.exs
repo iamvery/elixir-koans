@@ -1,7 +1,6 @@
 defmodule AboutNumbersAndBooleans do
   use Koans
 
-  @tag :skip
   think "Basics numbers types" do
     assert_? is_integer(42)
     assert_? is_integer(42.0)
@@ -9,7 +8,6 @@ defmodule AboutNumbersAndBooleans do
     assert_? is_float(42)
   end
 
-  @tag :skip
   think "Is a hexadecimal number an integer?" do
     assert_? is_integer(0x2A)
   end
@@ -24,34 +22,28 @@ defmodule AboutNumbersAndBooleans do
     assert 100_000_000 == __?
   end
 
-  @tag :skip
   think "Integers and floats have value equality" do
     assert_? 4 == 4.0
   end
 
-  @tag :skip
   think "Integers and floats have value inequality" do
     assert_? 4 != 2.0
   end
 
-  @tag :skip
   think "Strict equality checks types" do
     assert_? 4 === 4.0
     assert_? 4.0 === 4.0
   end
 
-  @tag :skip
   think "Strict inequality checks types" do
     assert_? 4 !== 4.0
   end
 
-  @tag :skip
   think "Are integers booleans?" do
     assert_? is_integer(true)
     assert_? is_boolean(0)
   end
 
-  @tag :skip
   think "Boolean OR returns left side if true, otherwise right side" do
     assert_? true or true
     assert_? true or false

@@ -10,6 +10,7 @@ defmodule Answers.AboutProcesses do
   end
 
   answer "You are a process" do
+    [assert]
   end
 
   answer "Processes send and receive messages; it's like mailbox" do

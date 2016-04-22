@@ -26,6 +26,7 @@ defmodule Answers.AboutAsserts do
   end
 
   answer "Some values are truthy; some values are falsy" do
+    [assert, assert, refute]
   end
 end
 

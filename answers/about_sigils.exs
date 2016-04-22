@@ -10,6 +10,7 @@ defmodule Answers.AboutSigils do
   end
 
   answer "Sigils can use different delimiters" do
+    [assert]
   end
 
   answer "The lowercase ~s sigil supports string interpolation" do

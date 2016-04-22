@@ -14,6 +14,7 @@ defmodule Answers.AboutEnums do
   end
 
   answer "Is an enumerable empty?" do
+    [refute, assert]
   end
 
   answer "Check if all items match" do
@@ -165,6 +166,7 @@ defmodule Answers.AboutEnums do
   end
 
   answer "Shuffle" do
+    [refute]
   end
 
   answer "Slicing" do

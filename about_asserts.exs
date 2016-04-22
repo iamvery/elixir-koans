@@ -36,7 +36,6 @@ defmodule AboutAsserts do
     assert_raise ExUnit.AssertionError, message, is_1_greater_than_2?
   end
 
-  @tag :skip
   think "Some values are truthy; some values are falsy" do
     assert_? 42
     assert_? :foo

@@ -14,6 +14,7 @@ defmodule Answers.AboutBinaries do
   end
 
   answer "Every character has a unique number (unicode codepoint)" do
+    [assert, assert, 99]
   end
 
   answer "Strings are binaries" do

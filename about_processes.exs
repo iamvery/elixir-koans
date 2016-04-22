@@ -12,7 +12,6 @@ defmodule AboutProcesses do
     assert is_pid(pid) == __?
   end
 
-  @tag :skip
   think "You are a process" do
     assert_? is_pid(self)
   end
