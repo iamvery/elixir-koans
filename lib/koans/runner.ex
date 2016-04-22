@@ -45,8 +45,25 @@ defmodule Koans.Runner do
     |> IO.puts
   end
 
+  @mountains ~S(
+  ** You have learned much. You must find your own path now. **
+
+                                  _                *       
+                *                ((                        
+                                  `                        
+             ^                                             
+            /*\        ^    *                              
+           /***\      /*\                                  
+          /     \    /* *\             *                   
+         /       \  /     \    ^                           
+        /         \/       \  / \               ^          
+       /          /         \/   \             / \  _      
+      /          /          /     \       _   /   \/ \  X  
+     /          /          /       \  _  / \ /    /   \/ \ 
+---------------------------------------------------------------
+)
+
   defp congratulate do
-    IO.ANSI.format([:green, "\n** You have learned much. You must find your own path now. **"])
-    |> IO.puts
+    IO.puts @mountains
   end
 end
