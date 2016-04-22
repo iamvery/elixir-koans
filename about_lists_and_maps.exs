@@ -20,7 +20,6 @@ defmodule AboutListsAndMaps do
     assert kw_list[:foo] == __?
   end
 
-  @tag :skip # Answerer isn't working on this one. 🤔
   think "Keyword lists just special syntax for lists of two-element tuples" do
     assert [foo: "bar"] == [{__?, __?}]
   end
@@ -55,7 +54,6 @@ defmodule AboutListsAndMaps do
 
   def foo(kw_list), do: kw_list
 
-  @tag :skip # Answerer isn't working on this one. 🤔
   think "Actually function bodies are a sneaky use of keyword lists" do
     list = foo do
       :good
@@ -66,7 +64,6 @@ defmodule AboutListsAndMaps do
 
   def iff(kw_list), do: kw_list
 
-  @tag :skip # Answerer isn't working on this one. 🤔
   think "Turns out our beloved if statements are also using keyword lists" do
     list = iff do
       :this
