@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Changed
+- Reorganize supporting code (https://github.com/iamvery/elixir-koans/pull/39)
+- Add supervisor, moving Koans.Examples to be supervised (https://github.com/iamvery/elixir-koans/pull/39)
+- Remove Koans.Check (https://github.com/iamvery/elixir-koans/pull/39)
 - Actual value on left, expected on right (https://github.com/iamvery/elixir-koans/pull/14)
 - Prettier user feedback when running koans (https://github.com/iamvery/elixir-koans/pull/37)
 - Various house cleanings (https://github.com/iamvery/elixir-koans/pull/36)

@@ -2,10 +2,10 @@ defmodule AboutNumbersAndBooleans do
   use Koans
 
   think "Basics numbers types" do
-    assert_? Koans.Check.integer?(42)
-    assert_? Koans.Check.integer?(42.0)
-    assert_? Koans.Check.float?(42.0)
-    assert_? Koans.Check.float?(42)
+    assert_? is_integer(42)
+    assert_? is_integer(42.0)
+    assert_? is_float(42.0)
+    assert_? is_float(42)
   end
 
   think "Is a hexadecimal number an integer?" do
