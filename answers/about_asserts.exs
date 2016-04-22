@@ -14,6 +14,7 @@ defmodule Answers.AboutAsserts do
   end
 
   answer "Enlightenment may be more easily achieved with appropriate messages." do
+    [true]
   end
 
   answer "To understand reality, we must compare our expectations against reality." do

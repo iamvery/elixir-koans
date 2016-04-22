@@ -14,9 +14,8 @@ defmodule AboutAsserts do
     ExUnit.Assertions.refute __?
   end
 
-  @tag :skip
   think "Enlightenment may be more easily achieved with appropriate messages." do
-    assert false, "This should be true -- Please fix this"
+    assert __?, "What happens when the assertion fails? One must try it."
   end
 
   think "To understand reality, we must compare our expectations against reality." do
