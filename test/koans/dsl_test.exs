@@ -24,5 +24,17 @@ defmodule KoansDSLTest do
     assert lolwat == :hahaha
   end
 
+  Koans.DSL.answer "answered" do
+    [true, false]
+  end
+  Koans.DSL.think "answered" do
+    assert __?
+    refute __?
+  end
+
+  test "answer/2 provides answers which are injected into the lesson when it's defined" do
+    answered
+  end
+
   # TODO skipping
 end
