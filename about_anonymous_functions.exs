@@ -2,7 +2,7 @@ defmodule AboutAnonymousFunctions do
   use Koans
 
   think "Declaring an anonymous function referenced by a_variable" do
-    a_variable = fn -> "Here the body anonymous function!" end
+    a_variable = fn -> "Here lies the body of the anonymous function!" end
 
     assert a_variable.() == __?
   end

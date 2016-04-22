@@ -50,7 +50,7 @@ defmodule AboutMatching do
   end
 
   think "Matching a list inside a list" do
-    [a] = [["Hello", "World !"]]
+    [a] = [["Hello", "World!"]]
 
     assert a  == __?
   end

@@ -91,6 +91,7 @@ defmodule AboutEnums do
   think "Find and manipulate a value" do
     list = [1, 2, 3]
     assert Enum.find_value(list, fn (x) -> rem(x, 2) == 1 end) == __?
+    # TODO this seems to be a really bad example
   end
 
   think "Get each element with its index" do
@@ -163,12 +164,15 @@ defmodule AboutEnums do
   think "Map reduce" do
     list = [4, 5, 6]
     assert Enum.map_reduce(list, 0, fn (x, acc) -> {x * 2, x + acc} end) == __?
+    # TODO this example may be unecessarily difficult to grok
   end
 
   think "Zipping collections together" do
     list_1 = [1, 2, 3]
     list_2 = [4, 5, 6]
     assert Enum.zip(list_1, list_2) == __?
+    # TODO would be nice to use values with more meaning. Like zipping atoms
+    # and values together to make a keyword list.
   end
 
   think "Find the max value in a collection" do
@@ -202,6 +206,8 @@ defmodule AboutEnums do
   think "Reduction" do
     result = Enum.reduce(numbers, 0, fn (x, acc) -> acc + x end)
     assert result == __?
+    # TODO this could probably be illustrated before map_reduce. Also would be
+    # nice to use values easier to compute in your head.
   end
 
   think "Rejection" do
