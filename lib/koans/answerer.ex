@@ -15,4 +15,5 @@ defmodule Koans.Answerer do
     {rest, answers} = inject(rest, answers)
     {[quoted|rest], answers}
   end
+  def inject(quoted, answers), do: {quoted, answers}
 end

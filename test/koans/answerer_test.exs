@@ -23,4 +23,16 @@ defmodule KoansAnswererTest do
 
     assert with_values == expected
   end
+
+  test "handles basic values" do
+    quoted = quote do
+      :foo
+    end
+    {quoted, _} = inject(quoted, [nil])
+    expected = quote do
+      :foo
+    end
+
+    assert quoted == expected
+  end
 end
