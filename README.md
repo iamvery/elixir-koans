@@ -1,3 +1,7 @@
+# :loudspeaker: We have decided to combine our efforts with http://elixirkoans.io/. This project may no longer receive any attention! :loudspeaker:
+
+---
+
 Elixir Koans
 ============
 
