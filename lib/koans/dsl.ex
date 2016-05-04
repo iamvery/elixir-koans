@@ -3,7 +3,7 @@ defmodule Koans.DSL do
     name = :"#{message}"
 
     lesson = case Koans.Answers.get(message) do
-      {:ok, answers} -> [do: Koans.Answerer.inject(lesson[:do], answers)]
+      {:ok, answers} -> [do: Macro.prewalk(lesson[:do], answers, &Koans.Answerer.inject/2)]
       :error -> lesson
     end
 
